@@ -1,16 +1,8 @@
-# Personal Provisioning Starter Kit
+# Personal Provisioning for my MacBook(s)
 
-Basic starter kit to create your own provisioning
+I like to have my computer set up automatically, so that I can have a consistent setup through different machines and 
 
-## Quick start
+## Run the provisioning script
 
-1. Clone this repo `git clone https://github.com/personal-provisioning/starterkit.git`
-2. Delete the git folder `rm -rf .git/`
-3. Init git again `git init`
-4. Run `setup.sh`
-5. Have a look at `base.yml` and adjust it to your needs
+Run `run.sh` to start the provisioning
 
-## How does this work?
-
-`setup.sh` will create a few folders, install Ansible and pull our generic
-roles.

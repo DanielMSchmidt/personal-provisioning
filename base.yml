@@ -8,10 +8,7 @@
     ## Basics
     # - {role: fish, tags: fish}
     # - {role: git, tags: git}
-    # - {role: home, tags: home}
     # - {role: iterm, tags: iterm, when: "ansible_os_family == 'Darwin'"}
-    # - {role: kwm, tags: kwm, when: "ansible_os_family == 'Darwin'"}
-    # - {role: osx-security, tags: osx-security, when: "ansible_os_family == 'Darwin'"}
     # - {role: tmux, tags: tmux}
     # - {role: vim, tags: vim}
     ## Basic development stuff
