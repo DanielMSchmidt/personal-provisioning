@@ -7,12 +7,13 @@
     - {role: mas, tags: mas, when: "ansible_os_family == 'Darwin'"}
 
     ## Basics
-    - {role: fish, tags: fish}
+    - role: fish
+      tags: fish
+      theme: bobthefish
+      editor: /usr/local/bin/vim
     - {role: git, tags: git}
     - role: iterm
       tags: iterm
-      vars:
-        theme: "bobthefish"
       when: "ansible_os_family == 'Darwin'"
     
     - {role: tmux, tags: tmux}
