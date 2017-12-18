@@ -11,7 +11,8 @@
       tags: fish
       theme: bobthefish
       editor: /usr/local/bin/vim
-    - {role: git, tags: git}
+    - git
+    - git-duet
     - role: iterm
       tags: iterm
       when: "ansible_os_family == 'Darwin'"
