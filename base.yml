@@ -17,7 +17,10 @@
       when: "ansible_os_family == 'Darwin'"
     
     - {role: tmux, tags: tmux}
-    - {role: vim, tags: vim}
+    - role: vim
+      tags: vim
+      vimconfig: "{{ lookup('file', './dotfiles/vimrc') }}"
+
     ## Basic development stuff
     - {role: docker, tags: docker}
     - {role: editorconfig, tags: editorconfig, when: "ansible_os_family == 'Darwin'"}
