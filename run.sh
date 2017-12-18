@@ -25,7 +25,6 @@ fi
 echo 'Installing Ansible'
 brew install ansible
 
-
 echo 'Running Ansible'
 
 ansible-playbook -i "localhost," -c local base.yml
