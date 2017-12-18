@@ -68,3 +68,4 @@
     # - {role: unrarx, tags: unrarx, when: "ansible_os_family == 'Darwin'"}
     # - {role: usb-overdrive, tags: usb-overdrive, when: "ansible_os_family == 'Darwin'"}
     # - {role: vlc, tags: vlc}
+    - role: nova
