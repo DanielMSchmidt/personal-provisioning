@@ -16,8 +16,10 @@
     - git-extras
 
     ## Development
-    - iterm
-    - tmux
+    - role: iterm
+      itermconfig: "{{ lookup('file', './dotfiles/itermconfig') }}"
+    - role: tmux
+      tmuxconfig: "{{ lookup('file', './dotfiles/tmuxconf') }}"
     - role: vim
       vimconfig: "{{ lookup('file', './dotfiles/vimrc') }}"
     - docker
