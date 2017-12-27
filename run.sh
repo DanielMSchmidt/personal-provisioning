@@ -2,7 +2,11 @@
 
 set -e
 
+DIRECTORY="$(cd ../roles || echo '' && pwd)"
 if [ -d "$DIRECTORY" ]; then
+    echo 'Updating roles'
+    pushd ../roles && git pull --rebase && popd
+else
     echo 'Cloning roles'
     git clone git@github.com:personal-provisioning/roles.git ../roles
 fi
