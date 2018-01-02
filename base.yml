@@ -20,13 +20,13 @@
       itermconfig: "{{ lookup('file', './dotfiles/itermconfig') }}"
     - role: tmux
       tmuxconfig: "{{ lookup('file', './dotfiles/tmuxconf') }}"
-    - role: vim
-      vimconfig: "{{ lookup('file', './dotfiles/vimrc') }}"
+  # - role: vim
+  #    vimconfig: "{{ lookup('file', './dotfiles/vimrc') }}"
     - docker
     - editorconfig
     - virtualbox
-    - gpg
-    - github-desktop
+      #  - gpg
+      # - github-desktop
     # TODO: extend role to set the environment variable
     # - role: FGtatsuro.android
     #   android_extra_components: 
