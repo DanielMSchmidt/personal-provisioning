@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 DIRECTORY="$(cd ../roles || echo '' && pwd)"
 if [ -d "$DIRECTORY" ]; then
@@ -14,11 +14,7 @@ fi
 echo 'Installing XCode CLI Tools'
 xcode-select --install || echo 'XCode CLI Tools are already installed'
 
-which -s brew
-
-
-if which -s brew
-then
+if which -s brew; then
     echo 'Updating Homebrew'
     brew update --all && brew upgrade && brew cleanup
 else
@@ -26,10 +22,11 @@ else
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-echo 'Installing Ansible'
-brew install ansible
+echo 'Installing Applications'
+brew bundle install
 
 echo 'Running Ansible'
-
 ansible-playbook -i "localhost," -c local base.yml
 
+echo 'Uninstalling unneeded applications'
+brew bundle cleanup

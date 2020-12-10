@@ -1,0 +1,42 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	aa = add --all
+	cm = commit -m
+	dcm = duet-commit -m
+	f = commit --fixup 
+	df = diff --word-diff --color-words
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	fp = "!git push --force-with-lease origin \"$(git rev-parse --abbrev-ref HEAD)\""
+	rb = pull --rebase origin master
+    rbm = pull --rebase origin main
+    rbb = pull --rebase origin beta
+	ud = "!git pull --rebase origin \"$(git rev-parse --abbrev-ref HEAD)\""
+    cofurf = "!sh -c \"git cof $1 && git ud && git rb && git fp\""
+	nb = "!sh -c \"git checkout -b $1 && git push origin $1 -u --no-verify\" -"
+    cof = "!sh -c \"git fetch && git checkout $1\" -"
+[user]
+	name = DanielMSchmidt
+	email = danielmschmidt92@gmail.com 
+[core]
+	editor = vim
+[push]
+	default = upstream
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[rebase]
+	autosquash = true
+	autoStash = true
+[remote "origin"]
+    fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+[init]
+	defaultBranch = main
+# [commit]
+# 	gpgsign = true
+[pull]
+	rebase = true

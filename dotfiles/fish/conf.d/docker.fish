@@ -1,0 +1,2 @@
+set -x DOCKER_USERNAME danielmschmidt
+set -x DOCKER_PASSWORD jrhPGYGsruHzTXTWCLvAYTPXJyDCzNfmjfgEDVsAEjhntPizgU

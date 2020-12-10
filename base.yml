@@ -3,49 +3,24 @@
   connection: local
 
   roles:
-    # Package Managers
-    - cask
-    - mas
-
     ## Basics
     - role: fish
       theme: bobthefish
       editor: /usr/local/bin/vim
     - git
     - git-duet
-    - git-extras
 
-    ## Development
-    - role: iterm
-      itermconfig: "{{ lookup('file', './dotfiles/itermconfig') }}"
-    - role: tmux
-      tmuxconfig: "{{ lookup('file', './dotfiles/tmuxconf') }}"
-  # - role: vim
-  #    vimconfig: "{{ lookup('file', './dotfiles/vimrc') }}"
-    - docker
-    - editorconfig
-    - virtualbox
-      #  - gpg
-      # - github-desktop
-    # TODO: extend role to set the environment variable
-    # - role: FGtatsuro.android
-    #   android_extra_components: 
-    #     - build-tools-25.0.3
-    #     - android-25
-    #     - extra-android-m2repository
-    #     - extra-google-google_play_services
-    #     - extra-google-m2repository
-    #     - sys-img-armeabi-v7a-android-26
-
-
-    ## Utitlites
-    - nova
-    - alfred
-    - caffeine
-    - rescuetime
-    - spectacle
-    - dropbox
-    - flux
-    - flycut
-    - franz
-    - google-chrome-canary
+  # Config directory
+  tasks:
+    - name: Create config directory
+      path: ~/.config
+      state: directory
+    - name: Copy config files
+      copy:
+        src: ./dotfiles
+        dest: ~/.config
+    - name: Symlink git config
+      file:
+        src: ~/.config/.gitconfig
+        dest: .gitconfig
+        state: link
