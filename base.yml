@@ -13,8 +13,9 @@
   # Config directory
   tasks:
     - name: Create config directory
-      path: ~/.config
-      state: directory
+      file:
+        path: ~/.config
+        state: directory
     - name: Copy config files
       copy:
         src: ./dotfiles
