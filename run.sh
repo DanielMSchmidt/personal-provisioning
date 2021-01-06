@@ -11,7 +11,7 @@ else
 fi
 pushd ../roles
 git remote add ds git@github.com:DanielMSchmidt/roles.git || echo "DS remote already installed"
-git checkout ds/all-extensions
+git checkout ds all-extensions
 git fetch
 git pull --rebase
 popd
