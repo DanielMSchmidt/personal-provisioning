@@ -22,6 +22,6 @@
         dest: ~/.config
     - name: Symlink git config
       file:
-        src: ~/.config/.gitconfig
-        dest: .gitconfig
+        src: .gitconfig
+        dest: ~/.config/.gitconfig
         state: link
