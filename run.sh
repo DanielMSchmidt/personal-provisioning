@@ -4,16 +4,17 @@ set -ex
 
 DIRECTORY="$(cd ../roles || echo '' && pwd)"
 if [ -d "$DIRECTORY" ]; then
-    echo 'Updating roles'
-    pushd ../roles
-    git checkout all-extensions
-    git pull --rebase
-    popd
+    echo 'Got roles repo'
 else
     echo 'Cloning roles'
     git clone git@github.com:personal-provisioning/roles.git ../roles
-    git checkout all-extensions
 fi
+pushd ../roles
+git remote add ds git@github.com:DanielMSchmidt/roles.git || echo "DS remote already installed"
+git checkout ds/all-extensions
+git fetch
+git pull --rebase
+popd
 
 echo 'Installing XCode CLI Tools'
 xcode-select --install || echo 'XCode CLI Tools are already installed'
