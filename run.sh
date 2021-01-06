@@ -30,3 +30,7 @@ ansible-playbook -i "localhost," -c local base.yml
 
 echo 'Uninstalling unneeded applications'
 brew bundle cleanup
+
+echo "Install rust"
+rustup-init -y -t wasm32-unknown-unknown
+cargo instal
