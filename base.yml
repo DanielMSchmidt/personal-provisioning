@@ -22,6 +22,6 @@
         dest: ~/.config
     - name: Symlink git config
       file:
-        src: "{{playbook_dir}}/dotfiles/.gitconfig"
-        dest: ~/.config/.gitconfig
+        src: "{{ playbook_dir }}/dotfiles/.gitconfig"
+        dest: ~/.gitconfig
         state: link
