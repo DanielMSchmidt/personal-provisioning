@@ -16,7 +16,7 @@ xcode-select --install || echo 'XCode CLI Tools are already installed'
 
 if which -s brew; then
     echo 'Updating Homebrew'
-    brew update --all && brew upgrade && brew cleanup
+    brew update && brew upgrade && brew cleanup
 else
     echo 'Installing Homebrew'
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
