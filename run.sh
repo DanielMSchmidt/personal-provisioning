@@ -12,7 +12,7 @@ fi
 pushd ../roles
 git remote add ds git@github.com:DanielMSchmidt/roles.git || echo "DS remote already installed"
 git fetch ds
-git checkout ds/all-extensions -b all-extensions
+git checkout ds/all-extensions -b all-extensions || echo "branch hopefully already exists"
 git pull --rebase
 popd
 
