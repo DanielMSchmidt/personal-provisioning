@@ -38,4 +38,3 @@ brew bundle cleanup
 
 echo "Install rust"
 rustup-init -y -t wasm32-unknown-unknown
-cargo instal
