@@ -38,3 +38,6 @@ brew bundle cleanup --force
 
 echo "Install rust"
 rustup-init -y -t wasm32-unknown-unknown
+
+echo "Setting up vscode extensions"
+./syncVsCodeExtensions.sh
