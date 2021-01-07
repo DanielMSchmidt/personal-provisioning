@@ -29,9 +29,9 @@
 
     - name: Copy config files
       copy:
-        src: ./dotfiles
-        dest: ~/.config
-
+        src: ./dotfiles/
+        dest: ~/
+        force: yes
     - name: Symlink git config
       file:
         src: "{{ playbook_dir }}/linkedfiles/.gitconfig"

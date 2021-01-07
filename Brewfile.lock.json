@@ -5,7 +5,7 @@
         "revision": "f9caa3cfd17cbdd89e40bbd24f6f04d58cb56cc5"
       },
       "homebrew/cask": {
-        "revision": "8ec933d74911bd1e972663be509fcec69c52d754"
+        "revision": "e81a736d128c17e05445bee5e8cd80ed30b764f5"
       },
       "homebrew/cask-versions": {
         "revision": "37475f4cb9abe0352a94c9e9514d021a8acc70b5"
@@ -26,10 +26,10 @@
         "revision": "0d42ad8900f04ccc96bafb24f4f061f65ff54585"
       },
       "homebrew/core": {
-        "revision": "94a725f8e39a3437a2905b0ea59e2fbe82401ced"
+        "revision": "3746a95f0c35ac01f147ac8ef5dab51e9ca35203"
       },
       "homebrew/services": {
-        "revision": "7bff9ee8157317a6d54807c072094b5746bd6177"
+        "revision": "5cce2c51b137885388a3f17a03a821e8546929ff"
       },
       "jesseduffield/lazydocker": {
         "revision": "67d6559ebb6f1ca217ea3d2981160c5fcd707c1a"
@@ -212,26 +212,26 @@
         }
       },
       "ffmpeg": {
-        "version": "4.3.1_7",
+        "version": "4.3.1_8",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/ffmpeg-4.3.1_7.big_sur.bottle.tar.gz",
-              "sha256": "ec5caceb2f7c78990988a0590060b57d0a1baf9f5d1b0ae4788591126d8c1e0f"
+              "url": "https://homebrew.bintray.com/bottles/ffmpeg-4.3.1_8.big_sur.bottle.tar.gz",
+              "sha256": "b27394d053006562667ead4416d069224cdfc2c5ef3f8218b5dccecb2458f3f8"
             },
             "arm64_big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/ffmpeg-4.3.1_7.arm64_big_sur.bottle.tar.gz",
-              "sha256": "ffe19b3417581f7f7821300a100f13d1b4c0ad2096dd1d75dc59fbb689d9ce32"
+              "url": "https://homebrew.bintray.com/bottles/ffmpeg-4.3.1_8.arm64_big_sur.bottle.tar.gz",
+              "sha256": "577ea3aad7c2ab97d189035e387b145862f066f9095559ec8694d64222ed9387"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/ffmpeg-4.3.1_7.catalina.bottle.tar.gz",
-              "sha256": "eb485bd45bac1e1b4df56361adb3a9bb3294961e77bcad6dd9f382393231c91e"
+              "url": "https://homebrew.bintray.com/bottles/ffmpeg-4.3.1_8.catalina.bottle.tar.gz",
+              "sha256": "c11d8e31ab157bd7654ae06bd80981b98c9842cf0058af4db6c8d8e29b095ff1"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/ffmpeg-4.3.1_7.mojave.bottle.tar.gz",
-              "sha256": "b2cb22e6e5dfdf5cc401b19e4a1ba8bba83735325b821a4ac854064658e545f2"
+              "url": "https://homebrew.bintray.com/bottles/ffmpeg-4.3.1_8.mojave.bottle.tar.gz",
+              "sha256": "2bf18e8f7feab77d575f34a31406d3d3d5c1517a6eb724a93366f55757cc6cfa"
             }
           }
         }
@@ -1575,6 +1575,12 @@
         "options": {
           "full_name": "virtualbox"
         }
+      },
+      "zoom": {
+        "version": "5.4.59780.1220",
+        "options": {
+          "full_name": "zoom"
+        }
       }
     },
     "mas": {
@@ -1617,7 +1623,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "2.7.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "94a725f8e39a3437a2905b0ea59e2fbe82401ced",
+        "Homebrew/homebrew-core": "3746a95f0c35ac01f147ac8ef5dab51e9ca35203",
         "CLT": "12.3.0.0.1.1607026830",
         "Xcode": "12.3",
         "macOS": "11.1"
