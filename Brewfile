@@ -1,6 +1,4 @@
 tap "bazelbuild/tap"
-tap "homebrew/cask"
-tap "homebrew/cask-versions"
 tap "git-duet/tap"
 tap "github/gh"
 tap "heroku/brew"
@@ -98,6 +96,7 @@ cask "vagrant"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc-nightly"
+cask "zoom"
 mas "Cleaner-App", id: 1013897218
 mas "GIPHY CAPTURE", id: 668208984
 mas "iMovie", id: 408981434
