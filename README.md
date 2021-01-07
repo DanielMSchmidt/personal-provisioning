@@ -5,6 +5,7 @@ I like to have my computer set up automatically, so that I can have a consistent
 ## New Computer, who this?
 
 Create a new SSH key and get it into GitHub before running the script.
+Load the GPG keys from 1Password and [import them](https://makandracards.com/makandra-orga/37763-gpg-extract-private-key-and-import-on-different-machine).
 Run `run.sh` to start the provisioning
 
 ### Manual steps
