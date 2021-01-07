@@ -40,3 +40,6 @@ rustup-init -y -t wasm32-unknown-unknown
 
 echo "Setting up vscode extensions"
 ./syncVsCodeExtensions.sh
+
+echo "Install fish plugins & themes"
+fish -c "omf install"
