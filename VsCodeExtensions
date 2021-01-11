@@ -12,6 +12,7 @@ hashicorp.terraform
 jcbuisson.vue
 krizzdewizz.goto-last-edit-location
 kumar-harsh.graphql-for-vscode
+matklad.rust-analyzer
 ms-vsliveshare.vsliveshare
 ms-vsliveshare.vsliveshare-audio
 ms-vsliveshare.vsliveshare-pack
@@ -20,7 +21,6 @@ phgn.vscode-starlark
 pmneo.tsimporter
 redhat.vscode-yaml
 RobbOwen.synthwave-vscode
-rust-lang.rust
 serayuzgur.crates
 tchayen.markdown-links
 timonwong.shellcheck
