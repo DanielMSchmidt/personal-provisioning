@@ -1,2 +1,0 @@
-set -x DOCKER_USERNAME foo
-set -x DOCKER_PASSWORD bar

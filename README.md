@@ -8,6 +8,7 @@ I like to have my computer set up automatically, so that I can have a consistent
 
 - Create a new SSH key and get it into GitHub before running the script.
 - Load the GPG keys from 1Password and [import them](https://makandracards.com/makandra-orga/37763-gpg-extract-private-key-and-import-on-different-machine).
+- Get your Dockerhub username and password and put it in `cp ./dotfiles/.config/fish/conf.d/_docker.fish.copy ./dotfiles/.config/fish/conf.d/docker.fish && vi ./dotfiles/.config/fish/conf.d/docker.fish`
 
 ### Running
 Run `run.sh` to start the provisioning
