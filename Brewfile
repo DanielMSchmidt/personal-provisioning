@@ -101,6 +101,7 @@ cask "visual-studio-code"
 cask "vlc-nightly"
 cask "zoom"
 mas "Cleaner-App", id: 1013897218
+mas "Focus To-Do", id: 1258530160
 mas "GIPHY CAPTURE", id: 668208984
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
