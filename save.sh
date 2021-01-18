@@ -1,6 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 
 ./updateBrewfile.sh
-./updateVsCodeExtentsions.sh
-
+./updateVsCodeExtensions.sh

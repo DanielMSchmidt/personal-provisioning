@@ -80,7 +80,6 @@ cask "flux"
 cask "flycut"
 cask "focusrite-control"
 cask "font-hack-nerd-font"
-cask "franz"
 cask "github"
 cask "google-chrome"
 cask "google-chrome-canary"
@@ -92,6 +91,7 @@ cask "portfolioperformance"
 cask "postman"
 cask "rescuetime"
 cask "skype"
+cask "slack"
 cask "spectacle"
 cask "spotify"
 cask "teamspeak-client"
@@ -108,4 +108,5 @@ mas "Keynote", id: 409183694
 mas "MoneyMoney", id: 872698314
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "WhatsApp", id: 1147396723
 mas "Xcode", id: 497799835
