@@ -32,8 +32,16 @@
         src: ./dotfiles/
         dest: ~/
         force: yes
+
     - name: Symlink git config
       file:
         src: "{{ playbook_dir }}/linkedfiles/.gitconfig"
         dest: ~/.gitconfig
+        state: link
+
+    # Built from gpg-key-signing branch on https://github.com/danielmschmidt/karn
+    - name: Symlink Karn binary
+      file:
+        src: "{{ playbook_dir }}/linkedfiles/karn"
+        dest: /usr/local/bin/karn
         state: link

@@ -11,12 +11,14 @@ I like to have my computer set up automatically, so that I can have a consistent
 - Get your Dockerhub username and password and put it in `cp ./dotfiles/.config/fish/conf.d/_docker.fish.copy ./dotfiles/.config/fish/conf.d/docker.fish && vi ./dotfiles/.config/fish/conf.d/docker.fish`
 
 ### Running
+
 Run `apply.sh` to start the provisioning
 
 ### Manual steps
 
 - Open all the apps and log in
 - Get node installed
+
 ```sh
 nvm install 14.15.4
 nvm alias default 14.15.4
