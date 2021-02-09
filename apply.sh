@@ -37,6 +37,7 @@ brew bundle cleanup --force
 
 echo "Install rust"
 rustup-init -y -t wasm32-unknown-unknown
+cargo install wasm-pack
 
 echo "Install node"
 mkdir -p ~/.nvm

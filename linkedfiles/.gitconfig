@@ -20,6 +20,7 @@
 [user]
 	name = DanielMSchmidt
 	email = danielmschmidt92@gmail.com 
+	signingkey = 01CE2A1CBB0DA9BF
 [core]
 	editor = vim
 [push]
@@ -36,11 +37,11 @@
     fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
 [init]
 	defaultBranch = main
-# [commit]
-# 	gpgsign = true
+[commit]
+	gpgsign = true
 [pull]
 	rebase = true
 [gpg]
 	program = gpg
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+# [url "git@github.com:"]
+# 	insteadOf = https://github.com/
