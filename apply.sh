@@ -2,12 +2,13 @@
 
 set -ex
 
-DIRECTORY="$(cd ../roles || echo '' && pwd)"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/" && pwd)"
+DIRECTORY="$(cd $ROOT/../roles || echo '' && pwd)"
 if [ -d "$DIRECTORY" ]; then
     echo 'Got roles repo'
 else
     echo 'Cloning roles'
-    git clone git@github.com:personal-provisioning/roles.git ../roles
+    git clone git@github.com:personal-provisioning/roles.git $ROOT/../roles
 fi
 pushd ../roles
 git remote add ds git@github.com:DanielMSchmidt/roles.git || echo "DS remote already installed"
@@ -15,6 +16,7 @@ git fetch ds
 git checkout ds/all-extensions -b all-extensions || echo "branch hopefully already exists"
 git pull --rebase
 popd
+ansible-galaxy install -r $ROOT/requirements.yaml
 
 echo 'Installing XCode CLI Tools'
 xcode-select --install || echo 'XCode CLI Tools are already installed'
@@ -35,9 +37,9 @@ ansible-playbook -i "localhost," -c local base.yml
 echo 'Uninstalling unneeded applications'
 brew bundle cleanup --force
 
-echo "Install rust"
-rustup-init -y -t wasm32-unknown-unknown
-cargo install wasm-pack
+# echo "Install rust"
+# rustup-init -y -t wasm32-unknown-unknown
+# cargo install wasm-pack
 
 echo "Install node"
 mkdir -p ~/.nvm

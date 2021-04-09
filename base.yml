@@ -9,6 +9,12 @@
       editor: /usr/local/bin/vim
     - git
     - git-duet
+    - role: rust
+      rust_version: 1.51.0
+      rust_update: true
+      cargo_items:
+        - wasm-pack
+    # TODO: add wasm target to role
 
   # Config directory
   tasks:
