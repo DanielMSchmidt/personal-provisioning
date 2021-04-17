@@ -25,6 +25,6 @@ contains /usr/local/opt/terraform@0.12/bin $fish_user_paths; or set -Ua fish_use
 
 # Karn (https://github.com/prydonius/karn)
 alias git="karn update; command git $argv"
-
-
+# Dancing helper
+source $HOME/.config/fish/functions/dancing.fish
 
