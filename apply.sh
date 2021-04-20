@@ -16,7 +16,6 @@ git fetch ds
 git checkout ds/all-extensions -b all-extensions || echo "branch hopefully already exists"
 git pull --rebase
 popd
-ansible-galaxy install -r $ROOT/requirements.yaml
 
 echo 'Installing XCode CLI Tools'
 xcode-select --install || echo 'XCode CLI Tools are already installed'
@@ -30,6 +29,12 @@ fi
 
 echo 'Installing Applications'
 brew bundle install
+
+echo 'Installing ansible and ansible-galaxy'
+brew install ansible
+
+echo 'Installing Ansible Requirements'
+ansible-galaxy install -r $ROOT/requirements.yaml
 
 echo 'Running Ansible'
 ansible-playbook -i "localhost," -c local base.yml
