@@ -18,6 +18,7 @@ brew "awscli"
 brew "bash"
 brew "bazel"
 brew "glib"
+brew "emacs", restart_service: true
 brew "cask"
 brew "editorconfig"
 brew "faas-cli"
@@ -28,6 +29,7 @@ brew "git"
 brew "git-extras"
 brew "libusb"
 brew "gnupg"
+brew "go"
 brew "helm"
 brew "jq"
 brew "krb5"
@@ -39,6 +41,7 @@ brew "nvm"
 brew "parallel"
 brew "postgresql"
 brew "pre-commit"
+brew "pybind11"
 brew "qrencode"
 brew "redis"
 brew "ripgrep"
@@ -96,6 +99,7 @@ cask "zoom"
 cask "zsa-wally"
 mas "Cleaner-App", id: 1013897218
 mas "Focus To-Do", id: 1258530160
+mas "GarageBand", id: 682658836
 mas "GIPHY CAPTURE", id: 668208984
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
