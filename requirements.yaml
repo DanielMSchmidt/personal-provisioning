@@ -1,2 +1,2 @@
-- src: fubarhouse.rust
-  name: rust
+# - src: fubarhouse.rust
+#   name: rust

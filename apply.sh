@@ -30,11 +30,8 @@ fi
 echo 'Installing Applications'
 brew bundle install
 
-echo 'Installing ansible and ansible-galaxy'
-brew install ansible
-
 echo 'Installing Ansible Requirements'
-ansible-galaxy install -r $ROOT/requirements.yaml
+# ansible-galaxy install -r $ROOT/requirements.yaml
 
 echo 'Running Ansible'
 ansible-playbook -i "localhost," -c local base.yml
@@ -54,3 +51,7 @@ echo "Setting up vscode extensions"
 
 echo "Install fish plugins & themes"
 fish -c "omf install"
+
+echo "Setting finder preferences"
+defaults write com.apple.finder AppleShowAllFiles YES
+killall Finder

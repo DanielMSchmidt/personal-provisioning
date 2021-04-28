@@ -11,7 +11,7 @@
 	<key>ClosingTmuxTabKillsTmuxWindows_selection</key>
 	<integer>1</integer>
 	<key>Command</key>
-	<string>/usr/local/bin/fish</string>
+	<string></string>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>nova</key>
