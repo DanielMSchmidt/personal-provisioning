@@ -11,7 +11,7 @@
 	<key>ClosingTmuxTabKillsTmuxWindows_selection</key>
 	<integer>1</integer>
 	<key>Command</key>
-	<string></string>
+	<string>/usr/local/bin/fish</string>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>nova</key>
@@ -1316,8 +1316,6 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
-	<key>PreventEscapeSequenceFromClearingHistory</key>
-	<false/>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
