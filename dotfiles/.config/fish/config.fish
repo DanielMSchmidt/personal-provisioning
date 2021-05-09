@@ -28,3 +28,7 @@ alias git="karn update; command git $argv"
 # Dancing helper
 source $HOME/.config/fish/functions/dancing.fish
 
+set -g fish_user_paths "/usr/local/opt/openjdk/bin" $fish_user_paths
+
+# google cloud cli
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
