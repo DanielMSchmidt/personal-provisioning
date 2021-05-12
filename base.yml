@@ -8,7 +8,7 @@
       theme: bobthefish
       editor: /usr/local/bin/vim
     - git
-    - git-duet
+    # - git-duet
     # - role: rust
     #   rust_version: 1.51.0
     #   rust_update: true
@@ -46,11 +46,11 @@
         state: link
 
     # Built from gpg-key-signing branch on https://github.com/danielmschmidt/karn
-    - name: Symlink Karn binary
-      file:
-        src: "{{ playbook_dir }}/linkedfiles/karn"
-        dest: /usr/local/bin/karn
-        state: link
+    # - name: Symlink Karn binary
+    #   file:
+    #     src: "{{ playbook_dir }}/linkedfiles/karn"
+    #     dest: /usr/local/bin/karn
+    #     state: link
 
     - name: create GO bin folder
       file: 

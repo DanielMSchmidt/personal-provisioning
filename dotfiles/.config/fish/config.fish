@@ -1,3 +1,6 @@
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Path to your oh-my-fish.
 set -g OMF_PATH $HOME/.local/share/omf
 set -g OMF_CONFIG $HOME/.config/omf
@@ -21,7 +24,6 @@ alias serve "python -m SimpleHTTPServer 8000"
 source $OMF_PATH/init.fish
 contains /usr/local/bin $fish_user_paths; or set -Ua fish_user_paths /usr/local/bin
 contains /usr/local/opt/ruby/bin $fish_user_paths; or set -Ua fish_user_paths /usr/local/opt/ruby/bin
-contains /usr/local/opt/terraform@0.12/bin $fish_user_paths; or set -Ua fish_user_paths /usr/local/opt/terraform@0.12/bin
 
 # Karn (https://github.com/prydonius/karn)
 alias git="karn update; command git $argv"
@@ -31,4 +33,4 @@ source $HOME/.config/fish/functions/dancing.fish
 set -g fish_user_paths "/usr/local/opt/openjdk/bin" $fish_user_paths
 
 # google cloud cli
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+source /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc 

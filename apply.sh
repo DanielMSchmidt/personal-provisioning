@@ -20,12 +20,16 @@ popd
 echo 'Installing XCode CLI Tools'
 xcode-select --install || echo 'XCode CLI Tools are already installed'
 
+export PATH=$PATH:/opt/homebrew/bin
 if which -s brew; then
     echo 'Homebrew is already installed'
 else
     echo 'Installing Homebrew'
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+
+echo 'Accepting license'
+sudo xcodebuild -license accept
 
 echo 'Installing Applications'
 brew bundle install
