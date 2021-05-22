@@ -20,7 +20,7 @@
 [user]
 	name = DanielMSchmidt
 	email = danielmschmidt92@gmail.com 
-	signingkey = 01CE2A1CBB0DA9BF
+	signingkey = B77B63D6AD7F1D4899CE5637377C3A4D62FBBBE2
 [core]
 	editor = vim
 [push]

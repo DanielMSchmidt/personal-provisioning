@@ -28,8 +28,14 @@ else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-echo 'Accepting license'
-sudo xcodebuild -license accept
+XCODE_VERSION=`xcodebuild -version | grep '^Xcode\s' | sed -E 's/^Xcode[[:space:]]+([0-9\.]+)/\1/'`
+ACCEPTED_LICENSE_VERSION=`defaults read /Library/Preferences/com.apple.dt.Xcode 2> /dev/null | grep IDEXcodeVersionForAgreedToGMLicense | cut -d '"' -f 2`
+
+if [ "$XCODE_VERSION" = "$ACCEPTED_LICENSE_VERSION" ]; then 
+  echo "License was already accepted"
+else
+  sudo xcodebuild -license accept
+fi
 
 echo 'Installing Applications'
 brew bundle install
