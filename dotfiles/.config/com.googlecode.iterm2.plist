@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Actions</key>
+	<array/>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>AutoHideTmuxClientSession</key>
@@ -451,14 +453,16 @@
 			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.33333333333333331</real>
+				<real>0.66804122924804688</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.29803921568627451</real>
+				<real>0.48080969630269155</real>
 				<key>Red Component</key>
-				<real>0.23529411764705882</real>
+				<real>0.14795355868409388</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -674,6 +678,8 @@
 			<integer>80</integer>
 			<key>Command</key>
 			<string>/usr/local/bin/fish</string>
+			<key>Cursor Boost</key>
+			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -698,14 +704,16 @@
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.33333333333333331</real>
+				<real>0.98323535919189453</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.29803921568627451</real>
+				<real>0.76110714575635796</real>
 				<key>Red Component</key>
-				<real>0.23529411764705882</real>
+				<real>0.36621245031074068</real>
 			</dict>
 			<key>Cursor Type</key>
 			<integer>1</integer>
@@ -1039,6 +1047,8 @@
 				<key>Red Component</key>
 				<real>0.51372549019607838</real>
 			</dict>
+			<key>Minimum Contrast</key>
+			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1063,14 +1073,16 @@
 			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.33333333333333331</real>
+				<real>0.62421417236328125</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.29803921568627451</real>
+				<real>0.49891707386971706</real>
 				<key>Red Component</key>
-				<real>0.23529411764705882</real>
+				<real>0.27616662364744116</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
@@ -1265,6 +1277,8 @@
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
+			<key>Use Tab Color</key>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1.3700000000000001</real>
 			<key>Visual Bell</key>
@@ -1325,11 +1339,11 @@
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.47793107269503554</real>
+	<real>0.40306309055637668</real>
 	<key>SwitchPaneModifier</key>
 	<integer>9</integer>
 	<key>TabStyleWithAutomaticOption</key>
@@ -3420,5 +3434,9 @@
 	<string>/-+\~_.</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>
