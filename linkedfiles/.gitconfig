@@ -25,6 +25,7 @@
 	signingkey = 01CE2A1CBB0DA9BF
 [core]
 	editor = vim
+	pager = less -F -X
 [push]
 	default = upstream
 [filter "lfs"]

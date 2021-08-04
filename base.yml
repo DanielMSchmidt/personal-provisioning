@@ -50,9 +50,3 @@
       file:
         src: "{{ playbook_dir }}/linkedfiles/karn"
         dest: /usr/local/bin/karn
-        state: link
-
-    - name: create GO bin folder
-      file: 
-        path: ~/go/bin
-        state: directory
