@@ -7,6 +7,8 @@ dbaeumer.vscode-eslint
 eamodio.gitlens
 esbenp.prettier-vscode
 fabiospampinato.vscode-todo-plus
+GitHub.codespaces
+GitHub.copilot
 GitHub.vscode-pull-request-github
 golang.go
 hashicorp.terraform
@@ -31,6 +33,7 @@ ms-vsliveshare.vsliveshare-pack
 msjsdiag.debugger-for-chrome
 phgn.vscode-starlark
 pmneo.tsimporter
+redhat.java
 redhat.vscode-commons
 redhat.vscode-yaml
 RescueTime.rescuetime
@@ -41,6 +44,12 @@ silvenon.mdx
 tchayen.markdown-links
 timonwong.shellcheck
 usernamehw.errorlens
+VisualStudioExptTeam.vscodeintellicode
+vscjava.vscode-java-debug
+vscjava.vscode-java-dependency
+vscjava.vscode-java-pack
+vscjava.vscode-java-test
+vscjava.vscode-maven
 wholroyd.jinja
 xyc.vscode-mdx-preview
 yzhang.markdown-all-in-one

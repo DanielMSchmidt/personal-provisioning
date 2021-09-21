@@ -33,4 +33,3 @@ set -g fish_user_paths "/usr/local/opt/openjdk/bin" $fish_user_paths
 # google cloud cli
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
 
-alias cdktfl="/Users/danielschmidt/work/terraform-cdk/packages/cdktf-cli/bin/cdktf"

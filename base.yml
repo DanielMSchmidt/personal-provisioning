@@ -33,6 +33,26 @@
         path: ~/fun
         state: directory
 
+    - name: Create go directory
+      file:
+        path: $HOME/go
+        state: directory
+
+    - name: Create go/bin directory
+      file:
+        path: $HOME/go/bin
+        state: directory
+
+    - name: Create go/src directory
+      file:
+        path: $HOME/go/src
+        state: directory
+
+    - name: Create go/pkg directory
+      file:
+        path: $HOME/go/pkg
+        state: directory
+
     - name: Copy config files
       copy:
         src: ./dotfiles/
