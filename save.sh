@@ -2,4 +2,3 @@
 set -ex
 
 ./updateBrewfile.sh
-./updateVsCodeExtensions.sh
