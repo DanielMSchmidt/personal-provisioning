@@ -33,3 +33,8 @@ set -g fish_user_paths "/usr/local/opt/openjdk/bin" $fish_user_paths
 # google cloud cli
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
 
+alias cdktfl="/Users/danielschmidt/work/terraform-cdk/packages/cdktf-cli/bin/cdktf"
+alias jestd="node --inspect-brk ./node_modules/jest/bin/jest.js"
+alias tfc_user_bigdane="cp ~/.terraform.d/credentials.tfrc.bigdane.json ~/.terraform.d/credentials.tfrc.json"
+alias tfc_user_danielschmidt="cp ~/.terraform.d/credentials.tfrc.danielschmidt.json ~/.terraform.d/credentials.tfrc.json"
+
