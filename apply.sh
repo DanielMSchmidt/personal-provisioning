@@ -13,7 +13,7 @@ else
 fi
 
 echo 'Installing Applications'
-brew bundle install
+brew bundle install --cleanup
 
 echo 'Installing Ansible Requirements'
 # ansible-galaxy install -r $ROOT/requirements.yaml
