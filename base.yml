@@ -15,11 +15,12 @@
         state: link
         force: true
       loop:
-        - com.googlecode.iterm2.plist
         - iterm2-settings
         - tmuxconf
+        - nova.itermcolors
         - vimrc
         - .gitconfig
+
     - name: Create fish config directory
       file:
         path: ~/.config/fish
@@ -33,6 +34,7 @@
       loop:
         - config.fish
         - fish_variables
+
     - name: Create fish sub-config directory
       file:
         path: ~/.config/fish/{{ item }}
@@ -55,6 +57,17 @@
         - conf.d/ruby.fish
         - conf.d/rust.fish
         - functions/dancing.fish
+
+    - name: Create shell directory
+      file:
+        path: ~/.config/iterm2
+        state: directory
+    - name: Symlink iterm2 config file
+      file:
+        dest: ~/.config/iterm2/com.googlecode.iterm2.plist
+        src: "{{ playbook_dir }}/dotfiles/.config/fish/com.googlecode.iterm2.plist"
+        state: link
+        force: true
 
     - name: Create work directory
       file:
