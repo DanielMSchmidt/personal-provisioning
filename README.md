@@ -17,6 +17,8 @@ Run `apply.sh` to start the provisioning
 ### Manual steps
 
 - Open all the apps and log in
+- Set the Keyboard to US International
+- Set Trackpad to right click in right corner
 
 ## Save current state
 

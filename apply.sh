@@ -15,18 +15,23 @@ fi
 echo 'Installing Applications'
 brew bundle install
 
-echo 'Installing Ansible Requirements'
+if [ -d "$HOME/.local/share/omf" ]; then
+    echo 'Oh-My-Fish is already installed'
+else
+    echo 'Installing Oh-My-Fish'
+    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+fi
+
+# echo 'Installing Ansible Requirements'
 # ansible-galaxy install -r $ROOT/requirements.yaml
 
 echo 'Running Ansible'
-ansible-playbook -i "localhost," -c local base.yml
+sudo ansible-playbook -i "localhost," -c local base.yml
 
 # echo "Install rust"
 # rustup-init -y -t wasm32-unknown-unknown
 # cargo install wasm-pack
 
-echo "Install node"
-mkdir -p ~/.nvm
 
 echo "Install fish plugins & themes"
 fish -c "omf install"
@@ -81,7 +86,9 @@ duti -s com.microsoft.VSCode .toml all
 
 killall Finder
 
+echo "Setup node"
+fish -c "n lts"
 
-nvm install lts
-nvm alias default lts
-nvm use default
+# nvm install lts
+# nvm alias default lts
+# nvm use default

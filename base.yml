@@ -13,6 +13,7 @@
         dest: ~/.config/{{ item }}
         src: "{{ playbook_dir }}/dotfiles/.config/{{ item }}"
         state: link
+        force: true
       loop:
         - com.googlecode.iterm2.plist
         - iterm2-settings
@@ -28,6 +29,7 @@
         dest: ~/.config/fish/{{ item }}
         src: "{{ playbook_dir }}/dotfiles/.config/fish/{{ item }}"
         state: link
+        force: true
       loop:
         - config.fish
         - fish_variables
@@ -43,18 +45,16 @@
         dest: ~/.config/fish/{{ item }}
         src: "{{ playbook_dir }}/dotfiles/.config/fish/{{ item }}"
         state: link
+        force: true
       loop:
         - conf.d/cdktf.fish
         - conf.d/golang.fish
         - conf.d/kubernetes.fish
+        - conf.d/node.fish
         - conf.d/nova.fish
-        - conf.d/nvm.fish
         - conf.d/ruby.fish
         - conf.d/rust.fish
         - functions/dancing.fish
-        - functions/load_nvm.fish
-        - functions/nvm_find_nvmrc.fish
-        - functions/nvm.fish
 
     - name: Create work directory
       file:
@@ -91,3 +91,9 @@
         src: ./dotfiles/
         dest: ~/
         force: yes
+
+    - name: Ensure fish can be used as shell
+      ansible.builtin.lineinfile:
+        path: /etc/shells
+        line: /usr/local/bin/fish
+      become: true

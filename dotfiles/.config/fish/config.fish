@@ -10,12 +10,6 @@ set -x LANG en_US.UTF-8
 set -x PATH /usr/local/sbin $PATH
 set -x EDITOR /usr/bin/vim
 
-set -x PATH /usr/local/kubebuilder/bin $PATH
-
-# Alias
-alias k "kubectl"
-alias ksn "kubectl config set-context (kubectl config current-contect) --namespace=$1"
-alias serve "python -m SimpleHTTPServer 8000"
 
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
@@ -23,18 +17,7 @@ contains /usr/local/bin $fish_user_paths; or set -Ua fish_user_paths /usr/local/
 contains /usr/local/opt/ruby/bin $fish_user_paths; or set -Ua fish_user_paths /usr/local/opt/ruby/bin
 contains /usr/local/opt/terraform@0.12/bin $fish_user_paths; or set -Ua fish_user_paths /usr/local/opt/terraform@0.12/bin
 
-# Karn (https://github.com/prydonius/karn)
-alias git="karn update; command git $argv"
 # Dancing helper
 source $HOME/.config/fish/functions/dancing.fish
 
 set -g fish_user_paths "/usr/local/opt/openjdk/bin" $fish_user_paths
-
-# google cloud cli
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
-
-alias cdktfl="/Users/danielschmidt/work/terraform-cdk/packages/cdktf-cli/bin/cdktf"
-alias jestd="node --inspect-brk ./node_modules/jest/bin/jest.js"
-alias tfc_user_bigdane="cp ~/.terraform.d/credentials.tfrc.bigdane.json ~/.terraform.d/credentials.tfrc.json"
-alias tfc_user_danielschmidt="cp ~/.terraform.d/credentials.tfrc.danielschmidt.json ~/.terraform.d/credentials.tfrc.json"
-
