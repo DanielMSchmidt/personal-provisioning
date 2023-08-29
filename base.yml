@@ -50,6 +50,7 @@
         force: true
       loop:
         - conf.d/cdktf.fish
+        - conf.d/gh.fish
         - conf.d/golang.fish
         - conf.d/kubernetes.fish
         - conf.d/node.fish
