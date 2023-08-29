@@ -47,7 +47,7 @@
         "revision": "08f177386302dc6fcf426f5a1edbd15498c3bca8"
       },
       "hashicorp/security": {
-        "revision": "deaadd17a38f77a05a995b511dde88bab5b95388",
+        "revision": "fd1dd484e6a05c5be894be2a825d09f0187e3c3b",
         "options": {
           "clone_target": "git@github.com:hashicorp/homebrew-security.git"
         }
@@ -69,6 +69,9 @@
       },
       "sergiobenitez/osxct": {
         "revision": "22ab1343a2ec890d2c1b641061da73ff6f719841"
+      },
+      "hashicorp/internal": {
+        "revision": "2091f0673786ac59525897b20f52d5b741ac04cb"
       }
     },
     "brew": {
@@ -3023,7 +3026,7 @@
         "bottle": false
       },
       "hashicorp/security/doormat-cli": {
-        "version": "3.0.1",
+        "version": "3.6.2",
         "bottle": false
       },
       "golang": {
@@ -4997,6 +5000,22 @@
             }
           }
         }
+      },
+      "hashicorp/internal/tfcdev": {
+        "version": "0.17.0",
+        "bottle": false
+      },
+      "hashicorp/security/tsccr-helper": {
+        "version": "0.1.5",
+        "bottle": false
+      },
+      "hashicorp/tap/copywrite": {
+        "version": "0.16.4",
+        "bottle": false
+      },
+      "hashicorp/tap/nomad": {
+        "version": "1.6.1",
+        "bottle": false
       }
     },
     "cask": {
