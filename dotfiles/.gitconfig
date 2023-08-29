@@ -22,7 +22,7 @@
 [user]
 	name = Daniel Schmidt
 	email = danielmschmidt92@gmail.com 
-	signingkey = 01CE2A1CBB0DA9BF
+	signingkey = 377C3A4D62FBBBE2
 [core]
 	editor = vim
 	pager = less -F -X
