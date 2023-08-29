@@ -17,13 +17,6 @@ Run `apply.sh` to start the provisioning
 ### Manual steps
 
 - Open all the apps and log in
-- Get node installed
-
-```sh
-nvm install 14.15.4
-nvm alias default 14.15.4
-nvm use default
-```
 
 ## Save current state
 

@@ -2,26 +2,59 @@
 - hosts: all
   connection: local
 
-  roles:
-    ## Basics
-    - role: fish
-      theme: bobthefish
-      editor: /usr/local/bin/vim
-    - git
-    - git-duet
-    # - role: rust
-    #   rust_version: 1.51.0
-    #   rust_update: true
-    #   cargo_items:
-    #     - wasm-pack
-    # TODO: add wasm target to role
-
-  # Config directory
   tasks:
+    # Config directory should symlink all files
     - name: Create config directory
       file:
         path: ~/.config
         state: directory
+    - name: Symlink top-level config files
+      file:
+        dest: ~/.config/{{ item }}
+        src: "{{ playbook_dir }}/dotfiles/.config/{{ item }}"
+        state: link
+      loop:
+        - com.googlecode.iterm2.plist
+        - iterm2-settings
+        - tmuxconf
+        - vimrc
+        - .gitconfig
+    - name: Create fish config directory
+      file:
+        path: ~/.config/fish
+        state: directory
+    - name: Symlink fish config files
+      file:
+        dest: ~/.config/fish/{{ item }}
+        src: "{{ playbook_dir }}/dotfiles/.config/fish/{{ item }}"
+        state: link
+      loop:
+        - config.fish
+        - fish_variables
+    - name: Create fish sub-config directory
+      file:
+        path: ~/.config/fish/{{ item }}
+        state: directory
+      loop:
+        - conf.d
+        - functions
+    - name: Symlink fish sub-config files
+      file:
+        dest: ~/.config/fish/{{ item }}
+        src: "{{ playbook_dir }}/dotfiles/.config/fish/{{ item }}"
+        state: link
+      loop:
+        - conf.d/cdktf.fish
+        - conf.d/golang.fish
+        - conf.d/kubernetes.fish
+        - conf.d/nova.fish
+        - conf.d/nvm.fish
+        - conf.d/ruby.fish
+        - conf.d/rust.fish
+        - functions/dancing.fish
+        - functions/load_nvm.fish
+        - functions/nvm_find_nvmrc.fish
+        - functions/nvm.fish
 
     - name: Create work directory
       file:
@@ -58,15 +91,3 @@
         src: ./dotfiles/
         dest: ~/
         force: yes
-
-    - name: Symlink git config
-      file:
-        src: "{{ playbook_dir }}/linkedfiles/.gitconfig"
-        dest: ~/.gitconfig
-        state: link
-
-    # Built from gpg-key-signing branch on https://github.com/danielmschmidt/karn
-    - name: Symlink Karn binary
-      file:
-        src: "{{ playbook_dir }}/linkedfiles/karn"
-        dest: /usr/local/bin/karn

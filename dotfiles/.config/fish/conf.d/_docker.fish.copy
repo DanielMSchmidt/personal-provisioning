@@ -1,4 +1,0 @@
-# set -x DOCKER_USERNAME foo
-# set -x DOCKER_PASSWORD bar
-
-set -x OPENFAAS_URL http://192.168.178.85:8080
