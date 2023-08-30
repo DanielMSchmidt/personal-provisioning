@@ -49,6 +49,7 @@
         state: link
         force: true
       loop:
+        - conf.d/1password.fish
         - conf.d/cdktf.fish
         - conf.d/gh.fish
         - conf.d/golang.fish
