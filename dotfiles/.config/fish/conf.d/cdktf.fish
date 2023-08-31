@@ -2,7 +2,7 @@
 set -x CHECKPOINT_DISABLE "true"
 
 # helpers
-alias cdktfl="/Users/danielschmidt/work/terraform-cdk/packages/cdktf-cli/bin/cdktf"
+alias cdktfl="/Users/danielschmidt/work/hashicorp/terraform-cdk/packages/cdktf-cli/bin/cdktf"
 alias jestd="node --inspect-brk ./node_modules/jest/bin/jest.js"
 
 # TFC related
