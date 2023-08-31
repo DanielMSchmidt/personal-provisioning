@@ -88,7 +88,3 @@ killall Finder
 
 echo "Setup node"
 fish -c "n lts"
-
-# nvm install lts
-# nvm alias default lts
-# nvm use default
