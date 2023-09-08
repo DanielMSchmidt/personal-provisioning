@@ -10,6 +10,7 @@ set -x LANG en_US.UTF-8
 set -x PATH /usr/local/sbin $PATH
 set -x EDITOR /usr/bin/vim
 
+ssh-add ~/.ssh/id_rsa
 
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
@@ -20,4 +21,4 @@ contains /usr/local/opt/terraform@0.12/bin $fish_user_paths; or set -Ua fish_use
 # Dancing helper
 source $HOME/.config/fish/functions/dancing.fish
 
-set -g fish_user_paths "/usr/local/opt/openjdk/bin" $fish_user_paths
+set -g fish_user_paths /usr/local/opt/openjdk/bin $fish_user_paths
