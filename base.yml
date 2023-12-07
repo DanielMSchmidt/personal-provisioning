@@ -56,6 +56,7 @@
         - conf.d/kubernetes.fish
         - conf.d/node.fish
         - conf.d/nova.fish
+        - conf.d/terraform.fish
         - conf.d/ruby.fish
         - conf.d/rust.fish
         - functions/dancing.fish
