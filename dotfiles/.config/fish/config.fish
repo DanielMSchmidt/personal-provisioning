@@ -19,6 +19,8 @@ contains /usr/local/opt/ruby/bin $fish_user_paths; or set -Ua fish_user_paths /u
 contains /usr/local/opt/terraform@0.12/bin $fish_user_paths; or set -Ua fish_user_paths /usr/local/opt/terraform@0.12/bin
 
 # Dancing helper
+source $HOME/.config/fish/functions/atlas.fish
 source $HOME/.config/fish/functions/dancing.fish
+source $HOME/.config/fish/functions/development.fish
 
 set -g fish_user_paths /usr/local/opt/openjdk/bin $fish_user_paths

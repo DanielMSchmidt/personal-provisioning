@@ -59,7 +59,9 @@
         - conf.d/terraform.fish
         - conf.d/ruby.fish
         - conf.d/rust.fish
+        - functions/atlas.fish
         - functions/dancing.fish
+        - functions/development.fish
 
     - name: Create shell directory
       file:
