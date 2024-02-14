@@ -45,44 +45,44 @@ echo "Setting finder preferences"
 defaults write com.apple.finder AppleShowAllFiles YES
 
 # Open text files with VSCode
-duti -s com.microsoft.VSCode public.json all
-duti -s com.microsoft.VSCode public.plain-text all
-duti -s com.microsoft.VSCode public.python-script all
-duti -s com.microsoft.VSCode public.shell-script all
-duti -s com.microsoft.VSCode public.source-code all
-duti -s com.microsoft.VSCode public.text all
-duti -s com.microsoft.VSCode public.unix-executable all
+duti -s dev.zed.Zed-Preview public.json all
+duti -s dev.zed.Zed-Preview public.plain-text all
+duti -s dev.zed.Zed-Preview public.python-script all
+duti -s dev.zed.Zed-Preview public.shell-script all
+duti -s dev.zed.Zed-Preview public.source-code all
+duti -s dev.zed.Zed-Preview public.text all
+duti -s dev.zed.Zed-Preview public.unix-executable all
 # this works for files without a filename extension
-duti -s com.microsoft.VSCode public.data all
+duti -s dev.zed.Zed-Preview public.data all
 
-duti -s com.microsoft.VSCode .c all
-duti -s com.microsoft.VSCode .cpp all
-duti -s com.microsoft.VSCode .cs all
-duti -s com.microsoft.VSCode .css all
-duti -s com.microsoft.VSCode .go all
-duti -s com.microsoft.VSCode .java all
-duti -s com.microsoft.VSCode .js all
-duti -s com.microsoft.VSCode .sass all
-duti -s com.microsoft.VSCode .scss all
-duti -s com.microsoft.VSCode .less all
-duti -s com.microsoft.VSCode .vue all
-duti -s com.microsoft.VSCode .cfg all
-duti -s com.microsoft.VSCode .json all
-duti -s com.microsoft.VSCode .jsx all
-duti -s com.microsoft.VSCode .log all
-duti -s com.microsoft.VSCode .lua all
-duti -s com.microsoft.VSCode .md all
-duti -s com.microsoft.VSCode .php all
-duti -s com.microsoft.VSCode .pl all
-duti -s com.microsoft.VSCode .py all
-duti -s com.microsoft.VSCode .rb all
-duti -s com.microsoft.VSCode .ts all
-duti -s com.microsoft.VSCode .tsx all
-duti -s com.microsoft.VSCode .txt all
-duti -s com.microsoft.VSCode .conf all
-duti -s com.microsoft.VSCode .yaml all
-duti -s com.microsoft.VSCode .yml all
-duti -s com.microsoft.VSCode .toml all
+duti -s dev.zed.Zed-Preview .c all
+duti -s dev.zed.Zed-Preview .cpp all
+duti -s dev.zed.Zed-Preview .cs all
+duti -s dev.zed.Zed-Preview .css all
+duti -s dev.zed.Zed-Preview .go all
+duti -s dev.zed.Zed-Preview .java all
+duti -s dev.zed.Zed-Preview .js all
+duti -s dev.zed.Zed-Preview .sass all
+duti -s dev.zed.Zed-Preview .scss all
+duti -s dev.zed.Zed-Preview .less all
+duti -s dev.zed.Zed-Preview .vue all
+duti -s dev.zed.Zed-Preview .cfg all
+duti -s dev.zed.Zed-Preview .json all
+duti -s dev.zed.Zed-Preview .jsx all
+duti -s dev.zed.Zed-Preview .log all
+duti -s dev.zed.Zed-Preview .lua all
+duti -s dev.zed.Zed-Preview .md all
+duti -s dev.zed.Zed-Preview .php all
+duti -s dev.zed.Zed-Preview .pl all
+duti -s dev.zed.Zed-Preview .py all
+duti -s dev.zed.Zed-Preview .rb all
+duti -s dev.zed.Zed-Preview .ts all
+duti -s dev.zed.Zed-Preview .tsx all
+duti -s dev.zed.Zed-Preview .txt all
+duti -s dev.zed.Zed-Preview .conf all
+duti -s dev.zed.Zed-Preview .yaml all
+duti -s dev.zed.Zed-Preview .yml all
+duti -s dev.zed.Zed-Preview .toml all
 
 killall Finder
 
