@@ -2,6 +2,8 @@ set -x ATLAS_PATH /Users/dschmidt/work/hashicorp/atlas
 set -x AGENT_PATH /Users/dschmidt/work/hashicorp/tfc-agent
 set -x TERRAFORM_CREDENTIALS_FILE /Users/dschmidt/.terraform.d/credentials.tfrc.json
 
+set -x _TFC_AGENT_STACK_COMPONENTS_ENABLED 1
+
 function atlas_hostname -d "Outputs the atlas host name"
     echo (cd "$ATLAS_PATH" && eval "$(tfcdev stack env --export 2> /dev/null)"  && echo "$TFE_FQDN")
 end
@@ -49,18 +51,42 @@ function atlas_open -d "Opens atlas UI"
 end
 
 function atlas_logs -d "Watches atlas logs"
-    tfcdev stack logs atlas
+    set CURRENT_DIR (pwd)
+    cd $ATLAS_PATH && tfcdev stack logs atlas && cd $CURRENT_DIR
 end
 
 function agent_build -d "Builds the agent"
     set CURRENT_DIR (pwd)
-    cd /Users/dschmidt/work/hashicorp/tfc-agent && make bin && cd $CURRENT_DIR
+    cd $AGENT_PATH && make bin && cd $CURRENT_DIR
 end
 
 function agent_run -d "Runs the agent"
-    $AGENT_PATH/bin/tfc-agent -auto-update disabled -token (agent_token) -address https://(atlas_hostname)
+    $AGENT_PATH/bin/tfc-agent -name stack-agent-1 -log-level trace -accept plan,apply,stack_prepare,stack_plan,stack_apply -auto-update disabled -token (agent_token) -address https://(atlas_hostname)
 end
 
 function agent_build_and_run -d "Builds and runs the agent"
     agent_build && agent_run
+end
+
+
+function agent_build_docker -d "Builds the agent docker container"
+    set CURRENT_DIR (pwd)
+    cd /Users/dschmidt/work/hashicorp/tfc-agent && make docker && cd $CURRENT_DIR
+end
+
+function agent_run_docker -d "Runs the agent in docker"
+    docker run  -e TFC_AGENT_LOG_LEVEL=trace -e \
+        TFC_AGENT_ACCEPT=plan,apply,stack_prepare,stack_plan,stack_apply \
+        -e _TFC_AGENT_STACK_COMPONENTS_ENABLED=1 \
+        -e TFC_AGENT_AUTO_UPDATE=disabled \
+        -e TFC_AGENT_LOG_LEVEL=debug \
+        -e TFC_AGENT_NAME="stack-agent-1" \
+        -e TFC_ADDRESS="https://$(atlas_hostname)" \
+        -e TFC_AGENT_TOKEN="$(agent_token)" \
+        hashicorp/tfc-agent:latest
+
+end
+
+function agent_build_and_run_docker -d "Builds and runs the agent"
+    agent_build_docker && agent_run_docker
 end
