@@ -74,6 +74,13 @@
         state: link
         force: true
 
+    - name: Symlink .alacritty.toml
+      file:
+        dest: ~/.alacritty.toml
+        src: "{{ playbook_dir }}/dotfiles/.alacritty.toml"
+        state: link
+        force: true
+
     - name: Create work directory
       file:
         path: ~/work
