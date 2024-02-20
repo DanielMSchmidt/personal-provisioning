@@ -110,6 +110,21 @@
       loop:
         - terraform.kdl
 
+    - name: Create zed config directory
+      file:
+        path: ~/.config/zed
+        state: directory
+
+    - name: Symlink zed config files
+      file:
+        dest: ~/.config/zed/{{ item }}
+        src: "{{ playbook_dir }}/dotfiles/.config/zed/{{ item }}"
+        state: link
+        force: true
+      loop:
+        - keymap.json
+        - settings.json
+
     - name: Create work directory
       file:
         path: ~/work

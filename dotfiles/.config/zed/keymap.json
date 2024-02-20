@@ -1,0 +1,11 @@
+[
+    {
+        "context": "Editor",
+        "bindings": {
+            "cmd-k": "editor::GoToDefinition",
+            "cmd-l": "editor::FindAllReferences",
+            "cmd-.": "editor::ToggleCodeActions",
+            "cmd-r": "editor::Rename"
+        }
+    }
+]
