@@ -25,6 +25,7 @@
       file:
         path: ~/.config/fish
         state: directory
+
     - name: Symlink fish config files
       file:
         dest: ~/.config/fish/{{ item }}
@@ -80,6 +81,20 @@
         src: "{{ playbook_dir }}/dotfiles/.alacritty.toml"
         state: link
         force: true
+
+    - name: Create zellij  config directory
+      file:
+        path: ~/.config/zellij
+        state: directory
+
+    - name: Symlink zellij config files
+      file:
+        dest: ~/.config/zellij/{{ item }}
+        src: "{{ playbook_dir }}/dotfiles/.config/zellij/{{ item }}"
+        state: link
+        force: true
+      loop:
+        - config.kdl
 
     - name: Create work directory
       file:
