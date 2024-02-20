@@ -24,3 +24,11 @@ source $HOME/.config/fish/functions/dancing.fish
 source $HOME/.config/fish/functions/development.fish
 
 set -g fish_user_paths /usr/local/opt/openjdk/bin $fish_user_paths
+
+
+if status is-interactive
+    set -x ZELLIJ_AUTO_ATTACH true
+    set -x ZELLIJ_AUTO_EXIT true
+	# Autostart Zellij
+	eval "$(zellij setup --generate-auto-start fish)"
+end

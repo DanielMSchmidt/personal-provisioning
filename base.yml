@@ -82,7 +82,7 @@
         state: link
         force: true
 
-    - name: Create zellij  config directory
+    - name: Create zellij config directory
       file:
         path: ~/.config/zellij
         state: directory
@@ -94,7 +94,21 @@
         state: link
         force: true
       loop:
-        - config.kdl
+        - config.kd
+
+    - name: Create zellij layouts directory
+      file:
+        path: ~/.config/zellij/layouts
+        state: directory
+
+    - name: Symlink zellij layout files
+      file:
+        dest: ~/.config/zellij/layouts/{{ item }}
+        src: "{{ playbook_dir }}/dotfiles/.config/zellij/layouts/{{ item }}"
+        state: link
+        force: true
+      loop:
+        - terraform.kdl
 
     - name: Create work directory
       file:

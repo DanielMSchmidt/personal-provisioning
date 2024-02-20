@@ -1,0 +1,16 @@
+layout {
+    pane split_direction="vertical" {
+        pane name="main"
+        pane split_direction="horizontal" {
+            pane name="build" command="gow" {
+              args "-v" "-c" "build" "-v" "-o" "bin/"
+            }
+            pane name="test" command="go" start_suspended=true {
+              args "test" "-v" "./..."
+            }
+        }
+    }
+    pane size=1 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+}
