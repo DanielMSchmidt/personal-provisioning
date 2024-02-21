@@ -1,8 +1,9 @@
 [window]
 dynamic_padding = true
 decorations = "Buttonless"
-opacity = 0.7
+opacity = 0.8
 blur = true
+option_as_alt = "Both"
 
 [font]
 size = 15

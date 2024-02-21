@@ -147,8 +147,13 @@ keybinds {
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
+
         bind "Alt d" { NewPane "Left"; }
         bind "Alt D" { NewPane "Down"; }
+        bind "Alt w" { CloseFocus; }
+        bind "Alt b" { ToggleFloatingPanes; }
+        bind "Alt t" { NewTab; }
+
         bind "Alt n" { NewPane; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
@@ -351,3 +356,9 @@ theme "catppuccin-frappe"
 // Default: true
 //
 // styled_underlines false
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
