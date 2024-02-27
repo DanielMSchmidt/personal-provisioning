@@ -109,6 +109,7 @@
         force: true
       loop:
         - terraform.kdl
+        - stacksruntime.kdl
 
     - name: Create zed config directory
       file:

@@ -13,7 +13,16 @@ alias workOnTerraform="zellij action new-tab --layout ~/.config/zellij/layouts/t
 
 # Set my tf binary to the local one
 set -x TFSTACKS_TERRAFORM_BINARY /Users/dschmidt/work/hashicorp/terraform/bin/terraform
+
+# set debug level
+set -x TFSTACKS_LOG_LEVEL trace
+
 # Execute local tfstacks binary
 alias scli="/Users/dschmidt/work/hashicorp/terraform-stacks-cli/dist/tfstacks"
 # Build tfstacks binary
 alias sclib="cd /Users/dschmidt/work/hashicorp/terraform-stacks-cli && make build"
+
+alias workOnStacksRuntime="zellij action new-tab --layout ~/.config/zellij/layouts/stacksruntime.kdl"
+
+# Debug
+alias dlvtfrpc="cd /Users/dschmidt/work/hashicorp/terraform && dlv attach (ps | grep 'terraform rpcapi' | head -1 | awk '{ print $1 }')"

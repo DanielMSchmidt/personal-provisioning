@@ -9,7 +9,7 @@
 {
   "copilot": {
     "disabled_globs": [
-      ".env",
+      ".env"
     ]
   },
   "theme": "SynthWave 84 Dark",
