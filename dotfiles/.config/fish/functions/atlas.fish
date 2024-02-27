@@ -84,7 +84,6 @@ function agent_run_docker -d "Runs the agent in docker"
         -e TFC_ADDRESS="https://$(atlas_hostname)" \
         -e TFC_AGENT_TOKEN="$(agent_token)" \
         hashicorp/tfc-agent:latest
-
 end
 
 function agent_build_and_run_docker -d "Builds and runs the agent"

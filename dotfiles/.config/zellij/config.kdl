@@ -153,6 +153,8 @@ keybinds {
         bind "Alt w" { CloseFocus; }
         bind "Alt b" { ToggleFloatingPanes; }
         bind "Alt t" { NewTab; }
+        bind "Alt v" { ToggleFocusFullscreen; }
+        bind "Alt a" { DumpScreen "/tmp/my-dump.txt"; Run "zed" "/tmp/my-dump.txt";}
 
         bind "Alt n" { NewPane; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
