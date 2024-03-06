@@ -5,7 +5,8 @@ set -x TERRAFORM_CREDENTIALS_FILE /Users/dschmidt/.terraform.d/credentials.tfrc.
 set -x _TFC_AGENT_STACK_COMPONENTS_ENABLED 1
 
 function atlas_hostname -d "Outputs the atlas host name"
-    echo (cd "$ATLAS_PATH" && eval "$(tfcdev stack env --export 2> /dev/null)"  && echo "$TFE_FQDN")
+    set CURRENT_DIR (pwd)
+    echo (cd "$ATLAS_PATH" && eval "$(tfcdev stack env --export 2> /dev/null)"  && echo "$TFE_FQDN" && cd $CURRENT_DIR)
 end
 
 function atlas_token -d "Get auth token to authenticate against atlas"
