@@ -13,7 +13,9 @@ else
 fi
 
 echo 'Installing Applications'
-brew bundle install
+if [ -z "${SKIP_HOMEBREW}" ]; then
+    brew bundle install
+fi
 
 if [ -d "$HOME/.local/share/omf" ]; then
     echo 'Oh-My-Fish is already installed'

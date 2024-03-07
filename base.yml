@@ -64,17 +64,6 @@
         - functions/dancing.fish
         - functions/development.fish
 
-    - name: Create shell directory
-      file:
-        path: ~/.config/iterm2
-        state: directory
-    - name: Symlink iterm2 config file
-      file:
-        dest: ~/.config/iterm2/com.googlecode.iterm2.plist
-        src: "{{ playbook_dir }}/dotfiles/.config/fish/com.googlecode.iterm2.plist"
-        state: link
-        force: true
-
     - name: Symlink .alacritty.toml
       file:
         dest: ~/.alacritty.toml
