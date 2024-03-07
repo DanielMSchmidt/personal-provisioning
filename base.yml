@@ -4,6 +4,16 @@
 
   tasks:
     # Config directory should symlink all files
+    - name: Symlink top-level files
+      file:
+        dest: ~/{{ item }}
+        src: "{{ playbook_dir }}/dotfiles/{{ item }}"
+        state: link
+        force: true
+      loop:
+        - .alacritty.toml
+        - .gitconfig
+
     - name: Create config directory
       file:
         path: ~/.config
@@ -19,7 +29,6 @@
         - tmuxconf
         - nova.itermcolors
         - vimrc
-        - .gitconfig
 
     - name: Create fish config directory
       file:
@@ -63,13 +72,6 @@
         - functions/atlas.fish
         - functions/dancing.fish
         - functions/development.fish
-
-    - name: Symlink .alacritty.toml
-      file:
-        dest: ~/.alacritty.toml
-        src: "{{ playbook_dir }}/dotfiles/.alacritty.toml"
-        state: link
-        force: true
 
     - name: Create zellij config directory
       file:
