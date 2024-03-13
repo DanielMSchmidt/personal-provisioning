@@ -69,7 +69,6 @@ function agent_build_and_run -d "Builds and runs the agent"
     agent_build && agent_run
 end
 
-
 function agent_build_docker -d "Builds the agent docker container"
     set CURRENT_DIR (pwd)
     cd /Users/dschmidt/work/hashicorp/tfc-agent && make docker && cd $CURRENT_DIR
@@ -84,6 +83,8 @@ function agent_run_docker -d "Runs the agent in docker"
         -e TFC_AGENT_NAME="stack-agent-1" \
         -e TFC_ADDRESS="https://$(atlas_hostname)" \
         -e TFC_AGENT_TOKEN="$(agent_token)" \
+        -e TFSTACKS_TERRAFORM_BINARY="/terraform/bin/terraform" \
+        -v /Users/dschmidt/work/hashicorp/terraform:/terraform \
         hashicorp/tfc-agent:latest
 end
 
