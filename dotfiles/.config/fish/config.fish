@@ -8,6 +8,7 @@ set -x LC_ALL en_US.UTF-8
 set -x LANG en_US.UTF-8
 
 set -x PATH /usr/local/sbin $PATH
+set -x PATH /opt/homebrew/bin/ $PATH
 set -x EDITOR /usr/bin/vim
 
 ssh-add ~/.ssh/id_rsa
