@@ -24,15 +24,12 @@ else
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 fi
 
-# echo 'Installing Ansible Requirements'
-# ansible-galaxy install -r $ROOT/requirements.yaml
 
 echo 'Running Ansible'
 sudo ansible-playbook -i "localhost," -c local base.yml
 
 # echo "Install rust"
-# rustup-init -y -t wasm32-unknown-unknown
-# cargo install wasm-pack
+rustup-init -y
 
 
 echo "Install fish plugins & themes"
@@ -89,4 +86,11 @@ duti -s dev.zed.Zed-Preview .toml all
 killall Finder
 
 echo "Setup node"
-fish -c "n lts"
+
+# Check if stdout of n ls is empty
+# If it is, install node
+if [ -z "$(fish -c "n ls")" ]; then
+    echo "Installing node"
+    fish -c "n 16.20.2"
+    fish -c "n lts"
+fi

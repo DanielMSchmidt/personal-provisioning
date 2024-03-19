@@ -4,6 +4,8 @@
 alias tfl="/Users/dschmidt/work/hashicorp/terraform/bin/terraform"
 # Build terraform binary
 alias tfb="cd /Users/dschmidt/work/hashicorp/terraform && go build -ldflags=\"-X 'main.experimentsAllowed=yes'\" -v -o bin/"
+# Build terraform binary for linux
+alias tfbl="cd /Users/dschmidt/work/hashicorp/terraform && GOOS=linux GOARCH=amd64 go build -ldflags=\"-X 'main.experimentsAllowed=yes'\" -v -o bin/"
 # Watch terraform binary build
 alias tfw="cd /Users/dschmidt/work/hashicorp/terraform && gow -v -c build -v -ldflags=\"-X 'main.experimentsAllowed=yes'\" -o bin/"
 # Open Terminal session for terraform
