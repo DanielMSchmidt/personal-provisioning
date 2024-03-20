@@ -16,7 +16,7 @@ function atlas_token -d "Get auth token to authenticate against atlas"
 
     if test -z $TOKEN
         echo "ERROR: Token for '$HOSTNAME' is empty. Please run 'terraform login $HOSTNAME' to set the token."
-        exit 1
+        return 1
     end
 
     echo $TOKEN
