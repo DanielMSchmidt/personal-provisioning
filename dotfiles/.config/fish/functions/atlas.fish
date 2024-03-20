@@ -15,13 +15,8 @@ function atlas_token -d "Get auth token to authenticate against atlas"
     set TOKEN (jq -r ".credentials[\"$HOSTNAME\"].token" < "$TERRAFORM_CREDENTIALS_FILE")
 
     if test -z $TOKEN
-        echo "ERROR: Token for '$HOSTNAME' is empty. Running 'terraform login $HOSTNAME' to set the token."
-
-        # Let's log in
-        terraform login $HOSTNAME
-
-        # Alright now we are set
-        echo (atlas_token)
+        echo "ERROR: Token for '$HOSTNAME' is empty. Please run 'terraform login $HOSTNAME' to set the token."
+        exit 1
     end
 
     echo $TOKEN
