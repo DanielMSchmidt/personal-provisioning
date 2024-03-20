@@ -90,6 +90,7 @@
         - functions/atlas.fish
         - functions/dancing.fish
         - functions/development.fish
+        - functions/zellij.fish
 
     - name: Create zellij config directory
       file:
