@@ -9,6 +9,9 @@
         dest: ~/{{ item }}
         src: "{{ playbook_dir }}/dotfiles/{{ item }}"
         state: link
+        owner: "{{ owner }}"
+        group: "{{ group }}"
+        follow: false
         force: true
       loop:
         - .alacritty.toml
@@ -18,11 +21,16 @@
       file:
         path: ~/.config
         state: directory
+        owner: "{{ owner }}"
+        group: "{{ group }}"
     - name: Symlink top-level config files
       file:
         dest: ~/.config/{{ item }}
         src: "{{ playbook_dir }}/dotfiles/.config/{{ item }}"
         state: link
+        owner: "{{ owner }}"
+        group: "{{ group }}"
+        follow: false
         force: true
       loop:
         - iterm2-settings
@@ -33,6 +41,8 @@
     - name: Create fish config directory
       file:
         path: ~/.config/fish
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         state: directory
 
     - name: Symlink fish config files
@@ -40,6 +50,9 @@
         dest: ~/.config/fish/{{ item }}
         src: "{{ playbook_dir }}/dotfiles/.config/fish/{{ item }}"
         state: link
+        owner: "{{ owner }}"
+        group: "{{ group }}"
+        follow: false
         force: true
       loop:
         - config.fish
@@ -48,6 +61,8 @@
     - name: Create fish sub-config directory
       file:
         path: ~/.config/fish/{{ item }}
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         state: directory
       loop:
         - conf.d
@@ -57,6 +72,9 @@
         dest: ~/.config/fish/{{ item }}
         src: "{{ playbook_dir }}/dotfiles/.config/fish/{{ item }}"
         state: link
+        owner: "{{ owner }}"
+        group: "{{ group }}"
+        follow: false
         force: true
       loop:
         - conf.d/1password.fish
@@ -76,6 +94,8 @@
     - name: Create zellij config directory
       file:
         path: ~/.config/zellij
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         state: directory
 
     - name: Symlink zellij config files
@@ -83,13 +103,18 @@
         dest: ~/.config/zellij/{{ item }}
         src: "{{ playbook_dir }}/dotfiles/.config/zellij/{{ item }}"
         state: link
+        owner: "{{ owner }}"
+        group: "{{ group }}"
+        follow: false
         force: true
       loop:
-        - config.kd
+        - config.kdl
 
     - name: Create zellij layouts directory
       file:
         path: ~/.config/zellij/layouts
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         state: directory
 
     - name: Symlink zellij layout files
@@ -97,6 +122,9 @@
         dest: ~/.config/zellij/layouts/{{ item }}
         src: "{{ playbook_dir }}/dotfiles/.config/zellij/layouts/{{ item }}"
         state: link
+        owner: "{{ owner }}"
+        group: "{{ group }}"
+        follow: false
         force: true
       loop:
         - terraform.kdl
@@ -105,6 +133,8 @@
     - name: Create zed config directory
       file:
         path: ~/.config/zed
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         state: directory
 
     - name: Symlink zed config files
@@ -112,6 +142,9 @@
         dest: ~/.config/zed/{{ item }}
         src: "{{ playbook_dir }}/dotfiles/.config/zed/{{ item }}"
         state: link
+        owner: "{{ owner }}"
+        group: "{{ group }}"
+        follow: false
         force: true
       loop:
         - keymap.json
@@ -120,41 +153,55 @@
     - name: Create work directory
       file:
         path: ~/work
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         state: directory
 
     - name: Create fun directory
       file:
         path: ~/fun
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         state: directory
 
     - name: Create go directory
       file:
         path: $HOME/go
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         state: directory
 
     - name: Create go/bin directory
       file:
         path: $HOME/go/bin
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         state: directory
 
     - name: Create go/src directory
       file:
         path: $HOME/go/src
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         state: directory
 
     - name: Create go/pkg directory
       file:
         path: $HOME/go/pkg
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         state: directory
 
     - name: Copy config files
       copy:
         src: ./dotfiles/
         dest: ~/
+        owner: "{{ owner }}"
+        group: "{{ group }}"
         force: yes
 
     - name: Ensure fish can be used as shell
       ansible.builtin.lineinfile:
         path: /etc/shells
-        line: /usr/local/bin/fish
+        line: /opt/homebrew/bin/fish
       become: true

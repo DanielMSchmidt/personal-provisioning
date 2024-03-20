@@ -33,3 +33,5 @@ if status is-interactive
 	# Autostart Zellij
 	eval "$(zellij setup --generate-auto-start fish)"
 end
+
+zoxide init fish | source

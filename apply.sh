@@ -10,6 +10,8 @@ if which -s brew; then
 else
     echo 'Installing Homebrew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/dschmidt/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 echo 'Installing Applications'
@@ -26,11 +28,13 @@ fi
 
 
 echo 'Running Ansible'
-sudo ansible-playbook -i "localhost," -c local base.yml
+sudo ansible-playbook -i inventory base.yml
 
 # echo "Install rust"
-rustup-init -y
+# rustup-init -y
 
+# TODO: OMF installation
+# curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
 echo "Install fish plugins & themes"
 fish -c "omf install"
