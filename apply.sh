@@ -98,3 +98,6 @@ if [ -z "$(fish -c "n ls")" ]; then
     fish -c "n 16.20.2"
     fish -c "n lts"
 fi
+
+
+bash ./set-keyboard.sh
