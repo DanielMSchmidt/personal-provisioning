@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
+set -ex
 
-brew bundle dump --force
-
+brew bundle dump --all --cleanup --force --verbose  --file ./Brewfile --describe
