@@ -99,5 +99,7 @@ if [ -z "$(fish -c "n ls")" ]; then
     fish -c "n lts"
 fi
 
+# Install go CLIs
+fish -c "go install github.com/mitranim/gow@latest"
 
 bash ./set-keyboard.sh
