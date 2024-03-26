@@ -99,6 +99,10 @@ if [ -z "$(fish -c "n ls")" ]; then
     fish -c "n lts"
 fi
 
+echo "Setup ruby"
+fish -c "rbenv install 3.1.4"
+fish -c "rbenv global 3.1.4"
+fish -c "gem install bundler solargraph"
 # Install go CLIs
 fish -c "go install github.com/mitranim/gow@latest"
 

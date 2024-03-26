@@ -8,9 +8,7 @@
 // from the command palette or from `Zed` application menu.
 {
   "copilot": {
-    "disabled_globs": [
-      ".env"
-    ]
+    "disabled_globs": [".env"]
   },
   "theme": "SynthWave 84 Dark",
   "ui_font_size": 16,
@@ -19,7 +17,15 @@
   "features": {
     "copilot": true
   },
-  "format_on_save": "off",
+  "format_on_save": "on",
+  "lsp": {
+    "solargraph": {
+      "initialization_options": {
+        "diagnostics": true,
+        "formatting": false
+      }
+    }
+  },
   "language_overrides": {
     "Go": {
       "format_on_save": {
