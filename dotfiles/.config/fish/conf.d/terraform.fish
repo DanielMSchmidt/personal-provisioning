@@ -3,11 +3,11 @@
 # Execute local terraform binary
 alias tfl="/Users/dschmidt/work/hashicorp/terraform/bin/terraform"
 # Build terraform binary
-alias tfb="cd /Users/dschmidt/work/hashicorp/terraform && go build -ldflags=\"-X 'main.experimentsAllowed=yes'\" -v -o bin/"
+alias tfb="fish -c 'cd /Users/dschmidt/work/hashicorp/terraform && go build -ldflags=\"-X 'main.experimentsAllowed=yes'\" -v -o bin/'"
 # Build terraform binary for linux
-alias tfbl="cd /Users/dschmidt/work/hashicorp/terraform && GOOS=linux GOARCH=amd64 go build -ldflags=\"-X 'main.experimentsAllowed=yes'\" -v -o bin/"
+alias tfbl="fish -c 'cd /Users/dschmidt/work/hashicorp/terraform && GOOS=linux GOARCH=amd64 go build -ldflags=\"-X 'main.experimentsAllowed=yes'\" -v -o bin/'"
 # Watch terraform binary build
-alias tfw="cd /Users/dschmidt/work/hashicorp/terraform && gow -v -c build -v -ldflags=\"-X 'main.experimentsAllowed=yes'\" -o bin/"
+alias tfw="fish -c 'cd /Users/dschmidt/work/hashicorp/terraform && gow -v -c build -v -ldflags=\"-X 'main.experimentsAllowed=yes'\" -o bin/'"
 # Open Terminal session for terraform
 alias workOnTerraform="zellij action new-tab --layout ~/.config/zellij/layouts/terraform.kdl"
 
@@ -22,9 +22,9 @@ set -x TFSTACKS_LOG_LEVEL trace
 # Execute local tfstacks binary
 alias scli="/Users/dschmidt/work/hashicorp/terraform-stacks-cli/dist/tfstacks"
 # Build tfstacks binary
-alias sclib="cd /Users/dschmidt/work/hashicorp/terraform-stacks-cli && make build"
+alias sclib="fish -c 'cd /Users/dschmidt/work/hashicorp/terraform-stacks-cli && make build'"
 
 alias workOnStacksRuntime="zellij action new-tab --layout ~/.config/zellij/layouts/stacksruntime.kdl"
 
 # Debug
-alias dlvtfrpc="cd /Users/dschmidt/work/hashicorp/terraform && dlv attach (ps | grep 'terraform rpcapi' | head -1 | awk '{ print $1 }')"
+alias dlvtfrpc=" fish -c 'cd /Users/dschmidt/work/hashicorp/terraform && dlv attach (ps | grep 'terraform rpcapi' | head -1 | awk '{ print $1 }')'"
