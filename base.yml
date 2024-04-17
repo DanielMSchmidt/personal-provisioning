@@ -16,6 +16,7 @@
       loop:
         - .alacritty.toml
         - .gitconfig
+        - .git-authors
 
     - name: Create config directory
       file:
