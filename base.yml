@@ -93,6 +93,32 @@
         - functions/development.fish
         - functions/zellij.fish
 
+    - name: Create alacritty config directory
+      file:
+        path: ~/.config/alacritty
+        owner: "{{ owner }}"
+        group: "{{ group }}"
+        state: directory
+
+    - name: Create alacritty themes directory
+      file:
+        path: ~/.config/alacritty/themes
+        owner: "{{ owner }}"
+        group: "{{ group }}"
+        state: directory
+
+    - name: Symlink alacritty theme files
+      file:
+        dest: ~/.config/alacritty/themes/{{ item }}
+        src: "{{ playbook_dir }}/dotfiles/.config/alacritty/themes/{{ item }}"
+        state: link
+        owner: "{{ owner }}"
+        group: "{{ group }}"
+        follow: false
+        force: true
+      loop:
+        - catppuccin-frappe.toml
+
     - name: Create zellij config directory
       file:
         path: ~/.config/zellij

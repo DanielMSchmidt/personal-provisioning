@@ -1,7 +1,11 @@
+import = [
+    "~/.config/alacritty/themes/catppuccin-frappe.toml"
+]
+
 [window]
 dynamic_padding = true
 decorations = "Buttonless"
-opacity = 0.8
+opacity = 0.95
 blur = true
 option_as_alt = "Both"
 
