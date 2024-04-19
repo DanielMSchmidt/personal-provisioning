@@ -177,6 +177,7 @@
       loop:
         - keymap.json
         - settings.json
+        - tasks.json
 
     - name: Create work directory
       file:
