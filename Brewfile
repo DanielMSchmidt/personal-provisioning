@@ -4,6 +4,7 @@ tap "getsentry/tools"
 tap "git-duet/tap"
 tap "github/gh"
 tap "hashicorp/internal"
+tap "hashicorp/releng"
 tap "hashicorp/security", "git@github.com:hashicorp/homebrew-security.git"
 tap "hashicorp/tap"
 tap "heroku/brew"
@@ -219,8 +220,6 @@ brew "tldr"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Secures, stores, and tightly controls access to secrets
-brew "vault"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Watch files and take action when they change
@@ -233,14 +232,14 @@ brew "z"
 brew "zellij"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
-# Cloudflare Tunnel
-brew "cloudflare/cloudflare/cloudflared"
 # Sentry command-line client for some generic tasks
 brew "getsentry/tools/sentry-cli"
 # Pairing tool for Git
 brew "git-duet/tap/git-duet"
 # tfcdev -- Terraform Commercial development automation tooling
 brew "hashicorp/internal/tfcdev"
+# A tool for triggering on-prem staging and production releases for repositories that have onboarded to Common Release Tooling (CRT)
+brew "hashicorp/releng/bob"
 # Doormat CLI -- Command Line Interface to the Doormat Service
 brew "hashicorp/security/doormat-cli"
 # Managing trust for components used in HashiCorp supply chain
@@ -281,8 +280,6 @@ cask "focusrite-control"
 cask "font-hack-nerd-font"
 # Desktop client for GitHub repositories
 cask "github"
-# Web browser
-cask "google-chrome-canary"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Tool to create text-based art
@@ -321,8 +318,6 @@ cask "visual-studio-code"
 cask "vlc-nightly"
 # Multiplayer code editor
 cask "zed-preview"
-# Flash tool for ZSA keyboards
-cask "zsa-wally"
 mas "1Password for Safari", id: 1569813296
 mas "Cleaner-App", id: 1013897218
 mas "Focus To-Do", id: 1258530160

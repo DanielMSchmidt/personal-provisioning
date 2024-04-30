@@ -25,7 +25,7 @@ source $HOME/.config/fish/functions/dancing.fish
 source $HOME/.config/fish/functions/development.fish
 
 set -g fish_user_paths /usr/local/opt/openjdk/bin $fish_user_paths
-
+fish_add_path /opt/homebrew/sbin
 
 if status is-interactive
     set -x ZELLIJ_AUTO_ATTACH true
