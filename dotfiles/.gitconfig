@@ -6,7 +6,7 @@
 	aa = add --all
 	cm = commit -m
 	dcm = duet-commit -m
-	f = commit --fixup 
+	f = commit --fixup
 	df = diff
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	fp = "!git push --force-with-lease origin \"$(git rev-parse --abbrev-ref HEAD)\""
@@ -21,7 +21,7 @@
 	pick = cherry-pick
 [user]
 	name = Daniel Schmidt
-	email = danielmschmidt92@gmail.com 
+	email = danielmschmidt92@gmail.com
 	signingkey = 377C3A4D62FBBBE2
 [core]
 	editor = vim
