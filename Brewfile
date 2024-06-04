@@ -26,6 +26,8 @@ brew "act"
 brew "actionlint"
 # Cryptographic recipes and primitives for Python
 brew "cryptography"
+# C library SSHv1/SSHv2 client and server protocols
+brew "libssh"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Image format providing lossless and lossy compression for web images
@@ -72,16 +74,12 @@ brew "dotnet"
 brew "duti"
 # Maintain consistent coding style between multiple editors
 brew "editorconfig"
-# GNU compiler collection
-brew "gcc"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Image processing and image analysis library
 brew "leptonica"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
-# C library SSHv1/SSHv2 client and server protocols
-brew "libssh"
 # Secure Reliable Transport
 brew "srt"
 # OCR (Optical Character Recognition) engine
@@ -92,6 +90,8 @@ brew "ffmpeg"
 brew "fish"
 # Monitor a directory for changes and run a shell command
 brew "fswatch"
+# GNU compiler collection
+brew "gcc"
 # Library for encoding and decoding .avif files
 brew "libavif"
 # Toolkit for image loading and pixel buffer manipulation
