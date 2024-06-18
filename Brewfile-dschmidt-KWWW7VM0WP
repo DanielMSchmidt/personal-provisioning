@@ -170,8 +170,6 @@ brew "mysql"
 brew "mysql-client"
 # Node version management
 brew "n"
-# Create, run, and share large language models (LLMs)
-brew "ollama", restart_service: true
 # Development kit for the Java programming language
 brew "openjdk@11"
 # Shell command parallelization utility
