@@ -16,7 +16,10 @@ fi
 
 echo 'Installing Applications'
 if [ -z "${SKIP_HOMEBREW}" ]; then
-    brew bundle install
+    PROJECT_DIR=$(cd $(dirname $0); pwd)
+
+    BREWFILE=$(bash $PROJECT_DIR/brewfile-path.sh)
+    brew bundle install --file $BREWFILE
 fi
 
 if [ -d "$HOME/.local/share/omf" ]; then

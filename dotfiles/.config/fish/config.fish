@@ -36,3 +36,6 @@ end
 
 zoxide init fish | source
 op completion fish | source
+
+# Created by `pipx` on 2024-06-17 08:22:05
+set PATH $PATH /Users/dschmidt/.local/bin

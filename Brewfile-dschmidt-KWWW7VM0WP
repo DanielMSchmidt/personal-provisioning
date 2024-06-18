@@ -170,12 +170,16 @@ brew "mysql"
 brew "mysql-client"
 # Node version management
 brew "n"
+# Create, run, and share large language models (LLMs)
+brew "ollama", restart_service: true
 # Development kit for the Java programming language
 brew "openjdk@11"
 # Shell command parallelization utility
 brew "parallel"
 # Python dependency management tool
 brew "pipenv"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Object-relational database system
 brew "postgresql@14"
 # Framework for managing multi-language pre-commit hooks
@@ -276,7 +280,6 @@ cask "flux"
 cask "flycut"
 # Focusrite interface controller
 cask "focusrite-control"
-# Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
 # Desktop client for GitHub repositories
 cask "github"

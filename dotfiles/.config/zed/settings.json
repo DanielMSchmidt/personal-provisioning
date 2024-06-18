@@ -162,7 +162,13 @@
     //   "none"
     // 3. Draw all invisible symbols:
     //   "all"
-    "show_whitespaces": "selection",
+    // 4. Draw whitespaces at boundaries only:
+    //   "boundary"
+    // For a whitespace to be on a boundary, any of the following conditions need to be met:
+    // - It is a tab
+    // - It is adjacent to an edge (start or end)
+    // - It is adjacent to a whitespace (left or right)
+    "show_whitespaces": "boundary",
     // Settings related to calls in Zed
     "calls": {
         // Join calls with the microphone live by default
@@ -319,15 +325,9 @@
         "default_height": 320,
         // AI provider.
         "provider": {
-            "name": "openai",
-            // The default model to use when starting new conversations. This
-            // setting can take three values:
-            //
-            // 1. "gpt-3.5-turbo"
-            // 2. "gpt-4"
-            // 3. "gpt-4-turbo-preview"
-            // 4. "gpt-4o"
-            "default_model": "gpt-4o"
+            "name": "ollama",
+            // Recommended setting to allow for model startup
+            "low_speed_timeout_in_seconds": 30
         }
     },
     // Whether the screen sharing icon is shown in the os status bar.
