@@ -58,6 +58,8 @@ brew "gnutls"
 brew "emacs", restart_service: true
 # Emacs dependency management
 brew "cask"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
 # Cross-platform make
 brew "cmake"
 # Top-like interface for container metrics
@@ -182,6 +184,8 @@ brew "pipx"
 brew "postgresql@14"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
 # Show ps output as a tree
 brew "pstree"
 # Python 3 bindings for the Cairo graphics library
@@ -203,7 +207,7 @@ brew "ripgrep"
 # Utility that provides fast incremental file transfer
 brew "rsync"
 # Rust toolchain installer
-brew "rustup-init"
+brew "rustup"
 # Fast and accurate code counter with complexity and COCOMO estimates
 brew "scc"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -295,6 +299,8 @@ cask "numi"
 cask "obs"
 # Podcast platform
 cask "pocket-casts"
+# GUI client for PostgreSQL databases
+cask "postico"
 # Collaboration platform for API development
 cask "postman"
 # HTTP debugging proxy
@@ -316,9 +322,9 @@ cask "vagrant"
 # Open-source code editor
 cask "visual-studio-code"
 # Open-source cross-platform multimedia player
-cask "vlc-nightly"
+cask "vlc@nightly"
 # Multiplayer code editor
-cask "zed-preview"
+cask "zed@preview"
 mas "1Password for Safari", id: 1569813296
 mas "Cleaner-App", id: 1013897218
 mas "Focus To-Do", id: 1258530160
