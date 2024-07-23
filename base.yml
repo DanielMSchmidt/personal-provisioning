@@ -3,234 +3,217 @@
   connection: local
 
   tasks:
-    # Config directory should symlink all files
-    - name: Symlink top-level files
-      file:
-        dest: ~/{{ item }}
-        src: "{{ playbook_dir }}/dotfiles/{{ item }}"
-        state: link
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        follow: false
-        force: true
-      loop:
-        - .alacritty.toml
-        - .gitconfig
-        - .git-authors
+      - name: Copy top-level files
+        copy:
+            dest: ~/{{ item }}
+            src: "{{ playbook_dir }}/dotfiles/{{ item }}"
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            force: true
+        loop:
+            - .alacritty.toml
+            - .gitconfig
+            - .git-authors
 
-    - name: Create config directory
-      file:
-        path: ~/.config
-        state: directory
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-    - name: Symlink top-level config files
-      file:
-        dest: ~/.config/{{ item }}
-        src: "{{ playbook_dir }}/dotfiles/.config/{{ item }}"
-        state: link
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        follow: false
-        force: true
-      loop:
-        - iterm2-settings
-        - tmuxconf
-        - nova.itermcolors
-        - vimrc
+      - name: Create config directory
+        file:
+            path: ~/.config
+            state: directory
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+      - name: Copy top-level config files
+        copy:
+            dest: ~/.config/{{ item }}
+            src: "{{ playbook_dir }}/dotfiles/.config/{{ item }}"
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            force: true
+        loop:
+            - iterm2-settings
+            - tmuxconf
+            - nova.itermcolors
+            - vimrc
 
-    - name: Create fish config directory
-      file:
-        path: ~/.config/fish
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create fish config directory
+        file:
+            path: ~/.config/fish
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Symlink fish config files
-      file:
-        dest: ~/.config/fish/{{ item }}
-        src: "{{ playbook_dir }}/dotfiles/.config/fish/{{ item }}"
-        state: link
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        follow: false
-        force: true
-      loop:
-        - config.fish
-        - fish_variables
+      - name: Copy fish config files
+        copy:
+            dest: ~/.config/fish/{{ item }}
+            src: "{{ playbook_dir }}/dotfiles/.config/fish/{{ item }}"
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            force: true
+        loop:
+            - config.fish
+            - fish_variables
 
-    - name: Create fish sub-config directory
-      file:
-        path: ~/.config/fish/{{ item }}
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
-      loop:
-        - conf.d
-        - functions
-    - name: Symlink fish sub-config files
-      file:
-        dest: ~/.config/fish/{{ item }}
-        src: "{{ playbook_dir }}/dotfiles/.config/fish/{{ item }}"
-        state: link
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        follow: false
-        force: true
-      loop:
-        - conf.d/1password.fish
-        - conf.d/cdktf.fish
-        - conf.d/gh.fish
-        - conf.d/golang.fish
-        - conf.d/kubernetes.fish
-        - conf.d/node.fish
-        - conf.d/nova.fish
-        - conf.d/terraform.fish
-        - conf.d/ruby.fish
-        - conf.d/rust.fish
-        - functions/atlas.fish
-        - functions/dancing.fish
-        - functions/development.fish
-        - functions/zellij.fish
+      - name: Create fish sub-config directory
+        file:
+            path: ~/.config/fish/{{ item }}
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
+        loop:
+            - conf.d
+            - functions
+      - name: Copy fish sub-config files
+        copy:
+            dest: ~/.config/fish/{{ item }}
+            src: "{{ playbook_dir }}/dotfiles/.config/fish/{{ item }}"
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            force: true
+        loop:
+            - conf.d/1password.fish
+            - conf.d/cdktf.fish
+            - conf.d/gh.fish
+            - conf.d/golang.fish
+            - conf.d/kubernetes.fish
+            - conf.d/node.fish
+            - conf.d/nova.fish
+            - conf.d/terraform.fish
+            - conf.d/ruby.fish
+            - conf.d/rust.fish
+            - functions/atlas.fish
+            - functions/dancing.fish
+            - functions/development.fish
+            - functions/zellij.fish
 
-    - name: Create alacritty config directory
-      file:
-        path: ~/.config/alacritty
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create alacritty config directory
+        file:
+            path: ~/.config/alacritty
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Create alacritty themes directory
-      file:
-        path: ~/.config/alacritty/themes
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create alacritty themes directory
+        file:
+            path: ~/.config/alacritty/themes
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Symlink alacritty theme files
-      file:
-        dest: ~/.config/alacritty/themes/{{ item }}
-        src: "{{ playbook_dir }}/dotfiles/.config/alacritty/themes/{{ item }}"
-        state: link
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        follow: false
-        force: true
-      loop:
-        - catppuccin-frappe.toml
+      - name: Copy alacritty theme files
+        copy:
+            dest: ~/.config/alacritty/themes/{{ item }}
+            src: "{{ playbook_dir }}/dotfiles/.config/alacritty/themes/{{ item }}"
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            force: true
+        loop:
+            - catppuccin-frappe.toml
 
-    - name: Create zellij config directory
-      file:
-        path: ~/.config/zellij
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create zellij config directory
+        file:
+            path: ~/.config/zellij
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Symlink zellij config files
-      file:
-        dest: ~/.config/zellij/{{ item }}
-        src: "{{ playbook_dir }}/dotfiles/.config/zellij/{{ item }}"
-        state: link
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        follow: false
-        force: true
-      loop:
-        - config.kdl
+      - name: Copy zellij config files
+        copy:
+            dest: ~/.config/zellij/{{ item }}
+            src: "{{ playbook_dir }}/dotfiles/.config/zellij/{{ item }}"
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            force: true
+        loop:
+            - config.kdl
 
-    - name: Create zellij layouts directory
-      file:
-        path: ~/.config/zellij/layouts
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create zellij layouts directory
+        file:
+            path: ~/.config/zellij/layouts
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Symlink zellij layout files
-      file:
-        dest: ~/.config/zellij/layouts/{{ item }}
-        src: "{{ playbook_dir }}/dotfiles/.config/zellij/layouts/{{ item }}"
-        state: link
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        follow: false
-        force: true
-      loop:
-        - terraform.kdl
-        - stacksruntime.kdl
+      - name: Copy zellij layout files
+        copy:
+            dest: ~/.config/zellij/layouts/{{ item }}
+            src: "{{ playbook_dir }}/dotfiles/.config/zellij/layouts/{{ item }}"
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            force: true
+        loop:
+            - terraform.kdl
+            - stacksruntime.kdl
 
-    - name: Create zed config directory
-      file:
-        path: ~/.config/zed
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create zed config directory
+        file:
+            path: ~/.config/zed
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Symlink zed config files
-      file:
-        dest: ~/.config/zed/{{ item }}
-        src: "{{ playbook_dir }}/dotfiles/.config/zed/{{ item }}"
-        state: link
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        follow: false
-        force: true
-      loop:
-        - keymap.json
-        - settings.json
-        - tasks.json
+      - name: Copy zed config files
+        copy:
+            dest: ~/.config/zed/{{ item }}
+            src: "{{ playbook_dir }}/dotfiles/.config/zed/{{ item }}"
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            force: true
+        loop:
+            - keymap.json
+            - settings.json
+            - tasks.json
 
-    - name: Create work directory
-      file:
-        path: ~/work
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create work directory
+        file:
+            path: ~/work
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Create fun directory
-      file:
-        path: ~/fun
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create fun directory
+        file:
+            path: ~/fun
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Create go directory
-      file:
-        path: $HOME/go
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create go directory
+        file:
+            path: $HOME/go
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Create go/bin directory
-      file:
-        path: $HOME/go/bin
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create go/bin directory
+        file:
+            path: $HOME/go/bin
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Create go/src directory
-      file:
-        path: $HOME/go/src
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create go/src directory
+        file:
+            path: $HOME/go/src
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Create go/pkg directory
-      file:
-        path: $HOME/go/pkg
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        state: directory
+      - name: Create go/pkg directory
+        file:
+            path: $HOME/go/pkg
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            state: directory
 
-    - name: Copy config files
-      copy:
-        src: ./dotfiles/
-        dest: ~/
-        owner: "{{ owner }}"
-        group: "{{ group }}"
-        force: yes
+      - name: Copy config files
+        copy:
+            src: ./dotfiles/
+            dest: ~/
+            owner: "{{ owner }}"
+            group: "{{ group }}"
+            force: yes
 
-    - name: Ensure fish can be used as shell
-      ansible.builtin.lineinfile:
-        path: /etc/shells
-        line: /opt/homebrew/bin/fish
-      become: true
+      - name: Ensure fish can be used as shell
+        ansible.builtin.lineinfile:
+            path: /etc/shells
+            line: /opt/homebrew/bin/fish
+        become: true
